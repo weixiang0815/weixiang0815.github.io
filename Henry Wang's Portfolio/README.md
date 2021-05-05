@@ -16,3 +16,4 @@
 4.將Skills Section的順序從Resume之前改成Portfolio之後
 5.將Contact Section的Google Map定位的地點，由原先Downtown Conference Center改成國立臺灣大學
 6.改寫About Section、Resume Section、Portfolio Section與Skill Section的細節內容
+7.將Portfolio的作品集改成自己的作品
