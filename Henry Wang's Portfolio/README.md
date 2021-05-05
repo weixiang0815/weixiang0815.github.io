@@ -12,7 +12,7 @@
 修改的東西:
 1.將所有寫著模板原作者名字Alex Smith的地方改成Henry Wang
 2.在Hero Section(就是首頁最上方寫著標題的部分)，將自動打字的CSS動畫替換成別的單字
-3.將左邊菜單的Service選項改成Skills
+3.將左邊菜單原先的Service選項改成Skills
 4.將Skills Section的順序從Resume之前改成Portfolio之後
 5.將Contact Section的Google Map定位的地點，由原先Downtown Conference Center改成國立臺灣大學
 6.改寫About Section、Resume Section、Portfolio Section與Skill Section的細節內容
