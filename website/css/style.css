@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+.sd {
+    width: 100px;
+    height: 100px;
+}
+
+.md {
+    width: 200px;
+    height: 200px;
+}
+
+.ld {
+    width: 300px;
+    height: 300px;
+}
+
+.md-2 {
+    width: 400px;
+}

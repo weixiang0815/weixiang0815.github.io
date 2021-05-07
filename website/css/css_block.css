@@ -1,0 +1,25 @@
+.dog {
+    /* height: 250px; */
+    /* width: 250px; */
+    /* border-style: solid; */
+    /* border-width: 1px; */
+    background-image: url(../img/dog-cat.jpg);
+    background-size: cover;
+    display: inline-block;
+}
+
+.cat {
+    /* width: 250px; */
+    /* height: 250px; */
+    /* border: 1px solid; */
+    /* border-style: solid; */
+    /* border-width: 1px; */
+    background-image: url(../img/dog-cat.jpg);
+    background-size: cover;
+    background-position-x: right;
+    display: inline-block;
+}
+
+.v-center {
+    margin-top: calc((100vh - 200px) / 2);
+}
