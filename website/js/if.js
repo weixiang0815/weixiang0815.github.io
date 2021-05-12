@@ -52,3 +52,10 @@
         console.log(i++)
     } while (i <= 10)
 }
+
+{
+    let i = 1
+    while (i++ <= 5) {
+        console.log(Math.random())
+    }
+}
