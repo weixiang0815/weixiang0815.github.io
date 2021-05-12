@@ -17,3 +17,25 @@
     max = (x > y) ? ((x > z) ? x : z) : ((y > z) ? y : z);
     console.log(max);
 }
+
+{
+    let opt = 'a'
+    let str = ''
+    switch (opt) {
+        case 'a':
+            str = '可樂'
+            break
+        case 'd':
+            str = '鮮'
+        case 'b':
+            str += '奶茶'
+            break
+        case 'c':
+            str = '檸檬紅茶'
+            break
+        default:
+            str = '白開水'
+            break
+    }
+    console.log(str)
+}
