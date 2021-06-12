@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Recorder in Javascript</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div id="container">
+        <video src="" id="gum" playsinline autoplay muted></video>
+        <video src="" id="recorded" playsinline loop></video>
+
+        <div>
+            <button id="start">啟動攝影機</button>
+            <button id="record" disabled>開始錄影</button>
+            <button id="play" disabled>播放錄影</button>
+            <button id="download" disabled>下載錄影檔</button>
+        </div>
+
+        <div>
+            <h4>影音串流限制選項</h4>
+            <p>
+                消除回音: <input type="checkbox" id="echocancellation" />
+            </p>
+        </div>
+
+        <div><span id="errorMsg"></span></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
