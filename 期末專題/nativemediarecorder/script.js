@@ -11,6 +11,7 @@ const recordButton = document.querySelector('button#record');
 const playButton = document.querySelector('button#play');
 const downloadButton = document.querySelector('button#download');
 
+
 recordButton.addEventListener('click', () => {
     if (recordButton.textContent === '開始錄影') {
         startRecording();
@@ -22,6 +23,7 @@ recordButton.addEventListener('click', () => {
     }
 });
 
+
 playButton.addEventListener('click', () => {
     const superBuffer = new Blob(recordedBlobs, { type: 'video/webm' });
     recordedVideo.src = null;
@@ -31,13 +33,14 @@ playButton.addEventListener('click', () => {
     recordedVideo.play();
 });
 
+
 downloadButton.addEventListener('click', () => {
     const blob = new Blob(recordedBlobs, { type: 'video/mp4' });
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.style.display = 'none';
     a.href = url;
-    a.download = 'test.mp4';
+    a.download = '測試.mp4';
     document.body.appendChild(a);
     a.click();
     setTimeout(() => {
@@ -46,14 +49,21 @@ downloadButton.addEventListener('click', () => {
     }, 100);
 });
 
+function handleDataAvailable(event) {
+    console.log('handleDataAvailable', event);
+    if (event.data && event.data.size > 0) {
+        recordedBlobs.push(event.data);
+    }
+}
+
 function startRecording() {
     recordedBlobs = [];
-    let options = { mimetype: 'video/webm;codecs=vp9,opus' };
+    let options = { mimeType: 'video/webm;codecs=vp9,opus' };
     try {
-        mediaRecorder = new mediaRecorder(window.MediaStream, options);
+        mediaRecorder = new MediaRecorder(window.stream, options);
     } catch (e) {
         console.error('Exception while creating MediaRecorder:', e);
-        errorMsgElement.innerHTML = 'Exception while creating MediaRecorder: ${JSON.stringify(e)}';
+        errorMsgElement.innerHTML = `Exception while creating MediaRecorder: ${JSON.stringify(e)}`;
         return;
     }
 
@@ -63,7 +73,7 @@ function startRecording() {
     downloadButton.disabled = true;
     mediaRecorder.onstop = (event) => {
         console.log('Recorder stopped: ', event);
-        console.log('Recorder Blobs ', recordedBlobs);
+        console.log('Recorded Blobs: ', recordedBlobs);
     };
     mediaRecorder.ondataavailable = handleDataAvailable;
     mediaRecorder.start();
@@ -89,7 +99,7 @@ async function init(constraints) {
         handleSuccess(stream);
     } catch (e) {
         console.error('navigator.getUserMedia error:', e);
-        errorMsgElement.innerHTML = 'navigator.getUserMedia error:${e.toString()}';
+        errorMsgElement.innerHTML = `navigator.getUserMedia error:${e.toString()}`;
     }
 }
 
