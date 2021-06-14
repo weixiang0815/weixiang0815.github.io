@@ -1,6 +1,6 @@
 ## 總綱
 1. #### 本專案為政治國關三王威翔的109-2前端程式設計期末專題報告
-1. #### 本專案使用Bootstrap 5、MediaStream Recording API及Prism.js
+1. #### 本專案使用Bootstrap 5、MediaRecorder API及Prism.js
 1. #### 本專案主要功能為線上連線攝影機錄製影片、下載影片檔及提供原始碼示範
 
 ## 主要功能使用說明

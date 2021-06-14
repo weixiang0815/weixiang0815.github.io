@@ -10,4 +10,4 @@
 1. 尚未找齊作為裝飾排版的圖檔
 
 ## 想法
-1. 優先研究mediastream recording api的使用功能
+1. 優先研究mediaRecorder api的使用功能

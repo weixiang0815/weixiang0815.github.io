@@ -1,5 +1,5 @@
 ## 構想
-1. 初學mediastream recording api的連接攝影機、錄影、播放與下載等功能
+1. 初學mediaRecordier api的連接攝影機、錄影、播放與下載等功能
 1. Javascript程式設計有點複雜，需要耐心研究一下
 
 ## 問題
@@ -8,5 +8,5 @@
 1. 下載影音檔無法匯入任何剪輯軟體
 
 ## 想法
-1. 需要找其他人的版本學mediastream recording api的使用方式
+1. 需要找其他人的版本學mediaRecorder api的使用方式
 1. 之後套用更複雜的排版時，要小心每個方法與元件間的協調
