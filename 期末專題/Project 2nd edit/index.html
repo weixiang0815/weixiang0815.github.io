@@ -73,7 +73,7 @@
     <!-- 關於 -->
     <section id="about" class="p-5">
         <div class="container">
-            <h1 class="text-dark text-center pb-4">關於本網站</h1>
+            <h1 class="text-dark text-center pb-4 pt-5">關於本網站</h1>
             <div class="row text-center g-4">
                 <!-- 虛擬 -->
                 <div class="col-md">
@@ -170,17 +170,20 @@
     <!-- 問題 -->
     <section id="questions" class="p-5">
         <div class="container">
-            <h2 class="text-center mb-4">常見問題</h2>
+            <h2 class="text-center mb-4 pt-5">常見問題</h2>
             <div class="accordion accordion-flush" id="questions">
                 <!-- 問題一 -->
                 <div class="accordion-item">
                     <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-one">請問這個網站的功能使用了哪些技術?</button>
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-one">這個網站的功能使用哪些技術?</button>
                     </h2>
                     <div id="question-one" class="accordion-collapse collapse" data-bs-parent="#questions">
                         <div class="accordion-body">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto placeat, libero numquam dicta suscipit praesentium sapiente est natus. Earum dignissimos veritatis quas, aspernatur cumque reprehenderit exercitationem! Voluptatem, fugit assumenda. Provident
-                            illo quam possimus, maxime, quo fugiat dolores, quas illum necessitatibus temporibus architecto dignissimos sint pariatur cumque repellendus iure eum quidem!
+                            <ur>
+                                <li><strong>BootStrap 5:</strong> 全網頁主要排版</li>
+                                <li><strong>Prism函式庫:</strong> 開放原始碼欄位的原始碼排版及copy功能</li>
+                                <li><strong>MediaStream Recording API:</strong> 連接攝影機、錄影、播放與下載功能</li>
+                            </ur>
                         </div>
                     </div>
                 </div>
@@ -239,8 +242,141 @@
     <!-- 開放原始碼 -->
     <section id="source-code" class="p-5 bg-info">
         <div class="container">
-            <h1 class="text-center pb-4">開放原始碼</h1>
+            <h1 class="text-center pb-4 pt-5">開放原始碼</h1>
             <div class="row g-4 text-center">
+                <!-- JS原始碼 -->
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3>JS原始碼</h3>
+                            <div class="container">
+                                <pre style="height: 300px;">
+                                    <code class="lang-js">
+                                        'use strict';
+
+                                        /* globals MediaRecorder */
+
+                                        let mediaRecorder;
+                                        let recordedBlobs;
+
+                                        const errorMsgElement = document.querySelector('span#errorMsg');
+                                        const recordedVideo = document.querySelector('video#recorded');
+                                        const recordButton = document.querySelector('button#record');
+                                        const playButton = document.querySelector('button#play');
+                                        const downloadButton = document.querySelector('button#download');
+
+
+                                        recordButton.addEventListener('click', () => {
+                                            if (recordButton.textContent === '開始錄影') {
+                                                startRecording();
+                                            } else {
+                                                stopRecording();
+                                                recordButton.textContent = '開始錄影';
+                                                playButton.disabled = false;
+                                                downloadButton.disabled = false;
+                                            }
+                                        });
+
+
+                                        playButton.addEventListener('click', () => {
+                                            const superBuffer = new Blob(recordedBlobs, { type: 'video/webm' });
+                                            recordedVideo.src = null;
+                                            recordedVideo.srcObject = null;
+                                            recordedVideo.src = window.URL.createObjectURL(superBuffer);
+                                            recordedVideo.controls = true;
+                                            recordedVideo.play();
+                                        });
+
+
+                                        downloadButton.addEventListener('click', () => {
+                                            const blob = new Blob(recordedBlobs, { type: 'video/mp4' });
+                                            const url = window.URL.createObjectURL(blob);
+                                            const a = document.createElement('a');
+                                            a.style.display = 'none';
+                                            a.href = url;
+                                            a.download = '測試.mp4';
+                                            document.body.appendChild(a);
+                                            a.click();
+                                            setTimeout(() => {
+                                                document.body.removeChild(a);
+                                                window.URL.revokeObjectURL(url);
+                                            }, 100);
+                                        });
+
+                                        function handleDataAvailable(event) {
+                                            console.log('handleDataAvailable', event);
+                                            if (event.data && event.data.size > 0) {
+                                                recordedBlobs.push(event.data);
+                                            }
+                                        }
+
+                                        function startRecording() {
+                                            recordedBlobs = [];
+                                            let options = { mimeType: 'video/webm;codecs=vp9,opus' };
+                                            try {
+                                                mediaRecorder = new MediaRecorder(window.stream, options);
+                                            } catch (e) {
+                                                console.error('Exception while creating MediaRecorder:', e);
+                                                errorMsgElement.innerHTML = `Exception while creating MediaRecorder: ${JSON.stringify(e)}`;
+                                                return;
+                                            }
+
+                                            console.log('Created MediaRecorder', mediaRecorder, 'with options', options);
+                                            recordButton.textContent = '停止錄影';
+                                            playButton.disabled = true;
+                                            downloadButton.disabled = true;
+                                            mediaRecorder.onstop = (event) => {
+                                                console.log('Recorder stopped: ', event);
+                                                console.log('Recorded Blobs: ', recordedBlobs);
+                                            };
+                                            mediaRecorder.ondataavailable = handleDataAvailable;
+                                            mediaRecorder.start();
+                                            console.log('MediaRecorder started', mediaRecorder);
+                                        }
+
+                                        function stopRecording() {
+                                            mediaRecorder.stop();
+                                        }
+
+                                        function handleSuccess(stream) {
+                                            recordButton.disabled = false;
+                                            console.log('getUserMedia() got stream:', stream);
+                                            window.stream = stream;
+
+                                            const gumVideo = document.querySelector('video#gum');
+                                            gumVideo.srcObject = stream;
+                                        }
+
+                                        async function init(constraints) {
+                                            try {
+                                                const stream = await navigator.mediaDevices.getUserMedia(constraints);
+                                                handleSuccess(stream);
+                                            } catch (e) {
+                                                console.error('navigator.getUserMedia error:', e);
+                                                errorMsgElement.innerHTML = `navigator.getUserMedia error:${e.toString()}`;
+                                            }
+                                        }
+
+                                        document.querySelector('button#start').addEventListener('click', async() => {
+                                            const hasEchoCancellation = document.querySelector('#echoCancellation').checked;
+                                            const constraints = {
+                                                audio: {
+                                                    echoCancellation: { exact: hasEchoCancellation }
+                                                },
+                                                video: {
+                                                    width: 1280,
+                                                    height: 720
+                                                }
+                                            };
+                                            console.log('Using media constraints:', constraints);
+                                            await init(constraints);
+                                        });
+                                    </code>
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- CSS原始碼 -->
                 <div class="col-md-6">
                     <div class="card">
@@ -451,139 +587,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- JS原始碼 -->
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h3>JS原始碼</h3>
-                            <div class="container">
-                                <pre style="height: 300px;">
-                                    <code class="lang-js">
-                                        'use strict';
-
-                                        /* globals MediaRecorder */
-
-                                        let mediaRecorder;
-                                        let recordedBlobs;
-
-                                        const errorMsgElement = document.querySelector('span#errorMsg');
-                                        const recordedVideo = document.querySelector('video#recorded');
-                                        const recordButton = document.querySelector('button#record');
-                                        const playButton = document.querySelector('button#play');
-                                        const downloadButton = document.querySelector('button#download');
-
-
-                                        recordButton.addEventListener('click', () => {
-                                            if (recordButton.textContent === '開始錄影') {
-                                                startRecording();
-                                            } else {
-                                                stopRecording();
-                                                recordButton.textContent = '開始錄影';
-                                                playButton.disabled = false;
-                                                downloadButton.disabled = false;
-                                            }
-                                        });
-
-
-                                        playButton.addEventListener('click', () => {
-                                            const superBuffer = new Blob(recordedBlobs, { type: 'video/webm' });
-                                            recordedVideo.src = null;
-                                            recordedVideo.srcObject = null;
-                                            recordedVideo.src = window.URL.createObjectURL(superBuffer);
-                                            recordedVideo.controls = true;
-                                            recordedVideo.play();
-                                        });
-
-
-                                        downloadButton.addEventListener('click', () => {
-                                            const blob = new Blob(recordedBlobs, { type: 'video/mp4' });
-                                            const url = window.URL.createObjectURL(blob);
-                                            const a = document.createElement('a');
-                                            a.style.display = 'none';
-                                            a.href = url;
-                                            a.download = '測試.mp4';
-                                            document.body.appendChild(a);
-                                            a.click();
-                                            setTimeout(() => {
-                                                document.body.removeChild(a);
-                                                window.URL.revokeObjectURL(url);
-                                            }, 100);
-                                        });
-
-                                        function handleDataAvailable(event) {
-                                            console.log('handleDataAvailable', event);
-                                            if (event.data && event.data.size > 0) {
-                                                recordedBlobs.push(event.data);
-                                            }
-                                        }
-
-                                        function startRecording() {
-                                            recordedBlobs = [];
-                                            let options = { mimeType: 'video/webm;codecs=vp9,opus' };
-                                            try {
-                                                mediaRecorder = new MediaRecorder(window.stream, options);
-                                            } catch (e) {
-                                                console.error('Exception while creating MediaRecorder:', e);
-                                                errorMsgElement.innerHTML = `Exception while creating MediaRecorder: ${JSON.stringify(e)}`;
-                                                return;
-                                            }
-
-                                            console.log('Created MediaRecorder', mediaRecorder, 'with options', options);
-                                            recordButton.textContent = '停止錄影';
-                                            playButton.disabled = true;
-                                            downloadButton.disabled = true;
-                                            mediaRecorder.onstop = (event) => {
-                                                console.log('Recorder stopped: ', event);
-                                                console.log('Recorded Blobs: ', recordedBlobs);
-                                            };
-                                            mediaRecorder.ondataavailable = handleDataAvailable;
-                                            mediaRecorder.start();
-                                            console.log('MediaRecorder started', mediaRecorder);
-                                        }
-
-                                        function stopRecording() {
-                                            mediaRecorder.stop();
-                                        }
-
-                                        function handleSuccess(stream) {
-                                            recordButton.disabled = false;
-                                            console.log('getUserMedia() got stream:', stream);
-                                            window.stream = stream;
-
-                                            const gumVideo = document.querySelector('video#gum');
-                                            gumVideo.srcObject = stream;
-                                        }
-
-                                        async function init(constraints) {
-                                            try {
-                                                const stream = await navigator.mediaDevices.getUserMedia(constraints);
-                                                handleSuccess(stream);
-                                            } catch (e) {
-                                                console.error('navigator.getUserMedia error:', e);
-                                                errorMsgElement.innerHTML = `navigator.getUserMedia error:${e.toString()}`;
-                                            }
-                                        }
-
-                                        document.querySelector('button#start').addEventListener('click', async() => {
-                                            const hasEchoCancellation = document.querySelector('#echoCancellation').checked;
-                                            const constraints = {
-                                                audio: {
-                                                    echoCancellation: { exact: hasEchoCancellation }
-                                                },
-                                                video: {
-                                                    width: 1280,
-                                                    height: 720
-                                                }
-                                            };
-                                            console.log('Using media constraints:', constraints);
-                                            await init(constraints);
-                                        });
-                                    </code>
-                                </pre>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -591,7 +594,11 @@
     <!-- 聯絡資訊 & 地圖 -->
     <section id="contact" class="p-5">
         <div class="container">
+            <br>
+            <br>
+            <br>
             <div class="row g-4">
+                <!-- 聯絡資訊 -->
                 <div class="col-md">
                     <h2 class="text-center mb-4">聯絡資訊</h2>
                     <ul class="list-group list-group-flush lead">
@@ -612,6 +619,7 @@
                         </li>
                     </ul>
                 </div>
+                <!-- 地圖 -->
                 <div class="col-md">
                     <div class="text-center">
                         <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.8229216596696!2d121.50976605713367!3d25.040082821972895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2876dc1b4d647f9!2z5Lit6I-v5rCR5ZyL57i957Wx5bqc!5e0!3m2!1szh-TW!2stw!4v1623635655300!5m2!1szh-TW!2stw"
