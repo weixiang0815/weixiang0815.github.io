@@ -5,11 +5,336 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- 匯入Bootstrap 5的.css檔 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- 匯入Bootstrap icon包 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!-- 匯入Bootstrap icon當作favicon -->
+    <link rel="shortcut icon" href="img/camera-video.svg" type="image/x-icon">
+    <!-- 匯入自定義.css檔 -->
+    <link rel="stylesheet" href="main.css">
+    <title>前端期末專題 2nd edit</title>
 </head>
 
 <body>
+    <!-- 導覽選單 -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
+        <div class="container">
+            <a href="#" class="navbar-brand">前端期末專題 2nd edit</a>
 
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">關於</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#functions" class="nav-link">功能</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#learn" class="nav-link">教學</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#questions" class="nav-link">問題</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#source-code" class="nav-link">開放原始碼</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">聯絡資訊</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要展示區 -->
+    <section class="bg-dark text-light p-5 text-center text-sm-start">
+        <div class="container">
+            <div class="d-sm-flex align-items-center justify-content-between">
+                <div>
+                    <h1>歡迎來到<span class="text-warning">本專案練習網站</span></h1>
+                    <p class="lead my-4">
+                        馬上連線攝影機開始錄製影片
+                    </p>
+                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#start-recording">開始錄製</button>
+                </div>
+                <!-- 加一個什麼東西在H1標題旁邊 -->
+                <img class="img-fluid w-50 d-none d-sm-block" src="" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- 關於 -->
+    <section id="about" class="p-5">
+        <div class="container">
+            <div class="text-dark text-center pb-4">
+                <h1>關於本網站</h1>
+            </div>
+            <div class="row text-center g-4">
+                <div class="col-md">
+                    <div class="card bg-dark text-light">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                                <i class="bi bi-laptop"></i>
+                            </div>
+                            <h3 class="card-title mb-3">虛擬</h3>
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum modi repudiandae expedita optio quaerat delectus?
+                            </p>
+                            <a href="#" class="btn btn-primary">更多資訊</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="card bg-secondary text-light">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                                <i class="bi bi-person-square"></i>
+                            </div>
+                            <h3 class="card-title mb-3">混合</h3>
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum modi repudiandae expedita optio quaerat delectus?
+                            </p>
+                            <a href="#" class="btn btn-dark">更多資訊</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="card bg-dark text-light">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                                <i class="bi bi-people"></i>
+                            </div>
+                            <h3 class="card-title mb-3">親自</h3>
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum modi repudiandae expedita optio quaerat delectus?
+                            </p>
+                            <a href="#" class="btn btn-primary">更多資訊</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 功能 -->
+    <section id="functions" class="p-5">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md">
+                    <img src="" alt="" class="img-fluid">
+                </div>
+                <div class="col-md p-5">
+                    <h2>基本功能</h2>
+                    <p class="lead">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate quae nesciunt, consequatur doloremque aspernatur voluptatum.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus minus aspernatur in dolorem tempora ex fugiat nemo quas perferendis qui voluptatibus harum veritatis perspiciatis rem accusantium doloremque, nostrum eaque exercitationem?
+                    </p>
+                    <a href="#" class="btn btn-light mt-3">
+                        <i class="bi bi-chevron-right"></i> 馬上錄影
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 教學 -->
+    <section id="learn" class="p-5 bg-dark text-light">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md p-5">
+                    <h2>立即拍攝</h2>
+                    <p class="lead">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate quae nesciunt, consequatur doloremque aspernatur voluptatum.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus minus aspernatur in dolorem tempora ex fugiat nemo quas perferendis qui voluptatibus harum veritatis perspiciatis rem accusantium doloremque, nostrum eaque exercitationem?
+                    </p>
+                    <a href="#" class="btn btn-light mt-3">
+                        <i class="bi bi-chevron-right"></i> 閱讀更多
+                    </a>
+                </div>
+                <div class="col-md">
+                    <img src="" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 問題 -->
+    <section id="questions" class="p-5 bg-primary">
+        <div class="container">
+            <h2 class="text-center mb-4">常見問題</h2>
+            <div class="accordion accordion-flush" id="questions">
+                <!-- Item 1 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-one">問題一</button>
+                    </h2>
+                    <div id="question-one" class="accordion-collapse collapse" data-bs-parent="#questions">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto placeat, libero numquam dicta suscipit praesentium sapiente est natus. Earum dignissimos veritatis quas, aspernatur cumque reprehenderit exercitationem! Voluptatem, fugit assumenda. Provident
+                            illo quam possimus, maxime, quo fugiat dolores, quas illum necessitatibus temporibus architecto dignissimos sint pariatur cumque repellendus iure eum quidem!
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-two">問題二</button>
+                    </h2>
+                    <div id="question-two" class="accordion-collapse collapse" data-bs-parent="#questions">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto placeat, libero numquam dicta suscipit praesentium sapiente est natus. Earum dignissimos veritatis quas, aspernatur cumque reprehenderit exercitationem! Voluptatem, fugit assumenda. Provident
+                            illo quam possimus, maxime, quo fugiat dolores, quas illum necessitatibus temporibus architecto dignissimos sint pariatur cumque repellendus iure eum quidem!
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-three">問題三</button>
+                    </h2>
+                    <div id="question-three" class="accordion-collapse collapse" data-bs-parent="#questions">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto placeat, libero numquam dicta suscipit praesentium sapiente est natus. Earum dignissimos veritatis quas, aspernatur cumque reprehenderit exercitationem! Voluptatem, fugit assumenda. Provident
+                            illo quam possimus, maxime, quo fugiat dolores, quas illum necessitatibus temporibus architecto dignissimos sint pariatur cumque repellendus iure eum quidem!
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-four">問題四</button>
+                    </h2>
+                    <div id="question-four" class="accordion-collapse collapse" data-bs-parent="#questions">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto placeat, libero numquam dicta suscipit praesentium sapiente est natus. Earum dignissimos veritatis quas, aspernatur cumque reprehenderit exercitationem! Voluptatem, fugit assumenda. Provident
+                            illo quam possimus, maxime, quo fugiat dolores, quas illum necessitatibus temporibus architecto dignissimos sint pariatur cumque repellendus iure eum quidem!
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 5 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-five">問題五</button>
+                    </h2>
+                    <div id="question-five" class="accordion-collapse collapse" data-bs-parent="#questions">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto placeat, libero numquam dicta suscipit praesentium sapiente est natus. Earum dignissimos veritatis quas, aspernatur cumque reprehenderit exercitationem! Voluptatem, fugit assumenda. Provident
+                            illo quam possimus, maxime, quo fugiat dolores, quas illum necessitatibus temporibus architecto dignissimos sint pariatur cumque repellendus iure eum quidem!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 開放原始碼 -->
+    <section id="source-code" class="p-5">
+
+    </section>
+
+    <!-- 聯絡資訊 & 地圖 -->
+    <section id="contact" class="p-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md">
+                    <h2 class="text-center mb-4">聯絡資訊</h2>
+                    <ul class="list-group list-group-flush lead">
+                        <li class="list-group-item">
+                            地址: <span class="fw-bold">你家</span>
+                        </li>
+                        <li class="list-group-item">
+                            電話: <span class="fw-bold">+886000000000</span>
+                        </li>
+                        <li class="list-group-item">
+                            手機: <span class="fw-bold">+886900000000</span>
+                        </li>
+                        <li class="list-group-item">
+                            信箱: <span class="fw-bold">email@gamil.com</span>
+                        </li>
+                        <li class="list-group-item">
+                            網址: <span class="fw-bold">https://pornhub.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md">
+                    <div class="text-center">
+                        <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.8229216596696!2d121.50976605713367!3d25.040082821972895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2876dc1b4d647f9!2z5Lit6I-v5rCR5ZyL57i957Wx5bqc!5e0!3m2!1szh-TW!2stw!4v1623635655300!5m2!1szh-TW!2stw"
+                            width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 著作權聲明 -->
+    <footer class="p-5 bg-dark text-white text-center position-relative">
+        <div class="container">
+            <p class="lead">著作權聲明 &copy; 前端期末專題 2nd edit</p>
+
+            <a href="#" class="position-absolute bottom-0 end-0 p-5">
+                <i class="bi bi-arrow-up-circle h1"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- 錄影設定彈出視窗 -->
+    <div class="modal fade" id="start-recording" tabindex="-1" aria-labelledby="start-recordingLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="start-recordingLabel">輸入下列資訊就馬上開始</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="mb-3">
+                            <label for="first-name" class="col-form-label">
+                            First Name:
+                        </label>
+                            <input type="text" class="form-control" id="first-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="last-name" class="col-form-label">
+                            Last Name:
+                        </label>
+                            <input type="text" class="form-control" id="last-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="col-form-label">
+                            Email:
+                        </label>
+                            <input type="email" class="form-control" id="email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="col-form-label">
+                            Phone:
+                        </label>
+                            <input type="tel" class="form-control" id="phone">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                    <button type="button" class="btn btn-primary">送出</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 匯入Bootstrap 5的.js檔 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <!-- 匯入自定義.js檔 -->
+    <script src="script.js"></script>
 </body>
 
 </html>
