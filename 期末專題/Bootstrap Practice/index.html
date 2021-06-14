@@ -16,7 +16,7 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
         <div class="container">
             <a href="#" class="navbar-brand">Bootstrap5練習</a>
 
@@ -38,6 +38,15 @@
                     <li class="nav-item">
                         <a href="#questions" class="nav-link">問題</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="#instructors" class="nav-link">師資</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#source-code" class="nav-link">開放原始碼</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">聯絡我們</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -52,7 +61,7 @@
                     <p class="lead my-4">
                         馬上連線網路攝影機開始錄製影片
                     </p>
-                    <button class="btn btn-primary btn-lg">開始錄製</button>
+                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#start-recording">開始錄製</button>
                 </div>
                 <!-- 加一個什麼東西在H1標題旁邊 -->
                 <img class="img-fluid w-50 d-none d-sm-block" src="" alt="">
@@ -64,16 +73,16 @@
     <section class="bg-primary text-light p-5">
         <div class="container">
             <div class="d-md-flex justify-content-between align-items-center">
-                <h3 class="mb-3 mb-md-0">馬上開始錄製</h3>
+                <h3 class="mb-3 mb-md-0">訂閱最新消息</h3>
                 <div class="input-group news-input">
                     <input type="text" class="form-control" placeholder="輸入您的電子信箱" />
-                    <button class="btn btn-dark btn-lg" type="button">Button</button>
+                    <button class="btn btn-dark btn-lg" type="button">訂閱</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Boxes -->
+    <!-- About -->
     <section id="about" class="p-5">
         <div class="container">
             <div class="row text-center g-4">
@@ -123,8 +132,8 @@
         </div>
     </section>
 
-    <!-- Learn Sections -->
-    <section id="learn" class="p-5">
+    <!-- Functions -->
+    <section id="functions" class="p-5">
         <div class="container">
             <div class="row align-items-center justify-content-between">
                 <div class="col-md">
@@ -146,14 +155,12 @@
         </div>
     </section>
 
-    <section id="learn" class="p-5 bg-dark">
+    <!-- Learn -->
+    <section id="learn" class="p-5 bg-dark text-light">
         <div class="container">
             <div class="row align-items-center justify-content-between">
-                <div class="col-md">
-                    <img src="" alt="" class="img-fluid">
-                </div>
                 <div class="col-md p-5">
-                    <h2>學習基礎</h2>
+                    <h2>立即拍攝</h2>
                     <p class="lead">
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate quae nesciunt, consequatur doloremque aspernatur voluptatum.
                     </p>
@@ -164,9 +171,266 @@
                         <i class="bi bi-chevron-right"></i> 閱讀更多
                     </a>
                 </div>
+                <div class="col-md">
+                    <img src="" alt="" class="img-fluid">
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Question Accordion -->
+    <section id="questions" class="p-5">
+        <div class="container">
+            <h2 class="text-center mb-4">常見問題</h2>
+            <div class="accordion accordion-flush" id="questions">
+                <!-- Item 1 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-one">
+                      問題一
+                    </button>
+                    </h2>
+                    <div id="question-one" class="accordion-collapse collapse" data-bs-parent="#questions">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto placeat, libero numquam dicta suscipit praesentium sapiente est natus. Earum dignissimos veritatis quas, aspernatur cumque reprehenderit exercitationem! Voluptatem, fugit assumenda. Provident
+                            illo quam possimus, maxime, quo fugiat dolores, quas illum necessitatibus temporibus architecto dignissimos sint pariatur cumque repellendus iure eum quidem!
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-two">
+                      問題二
+                    </button>
+                    </h2>
+                    <div id="question-two" class="accordion-collapse collapse" data-bs-parent="#questions">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto placeat, libero numquam dicta suscipit praesentium sapiente est natus. Earum dignissimos veritatis quas, aspernatur cumque reprehenderit exercitationem! Voluptatem, fugit assumenda. Provident
+                            illo quam possimus, maxime, quo fugiat dolores, quas illum necessitatibus temporibus architecto dignissimos sint pariatur cumque repellendus iure eum quidem!
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-three">
+                      問題三
+                    </button>
+                    </h2>
+                    <div id="question-three" class="accordion-collapse collapse" data-bs-parent="#questions">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto placeat, libero numquam dicta suscipit praesentium sapiente est natus. Earum dignissimos veritatis quas, aspernatur cumque reprehenderit exercitationem! Voluptatem, fugit assumenda. Provident
+                            illo quam possimus, maxime, quo fugiat dolores, quas illum necessitatibus temporibus architecto dignissimos sint pariatur cumque repellendus iure eum quidem!
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-four">
+                      問題四
+                    </button>
+                    </h2>
+                    <div id="question-four" class="accordion-collapse collapse" data-bs-parent="#questions">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto placeat, libero numquam dicta suscipit praesentium sapiente est natus. Earum dignissimos veritatis quas, aspernatur cumque reprehenderit exercitationem! Voluptatem, fugit assumenda. Provident
+                            illo quam possimus, maxime, quo fugiat dolores, quas illum necessitatibus temporibus architecto dignissimos sint pariatur cumque repellendus iure eum quidem!
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 5 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-five">
+                      問題五
+                    </button>
+                    </h2>
+                    <div id="question-five" class="accordion-collapse collapse" data-bs-parent="#questions">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto placeat, libero numquam dicta suscipit praesentium sapiente est natus. Earum dignissimos veritatis quas, aspernatur cumque reprehenderit exercitationem! Voluptatem, fugit assumenda. Provident
+                            illo quam possimus, maxime, quo fugiat dolores, quas illum necessitatibus temporibus architecto dignissimos sint pariatur cumque repellendus iure eum quidem!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructors -->
+    <section id="instructors" class="p-5 bg-primary">
+        <div class="container">
+            <h2 class="text-center text-white">我們的師資</h2>
+            <p class="lead text-center text-white mb-5">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit distinctio et dolor quod? Doloribus, consectetur.
+            </p>
+            <div class="row g-4">
+                <!-- 大家都得聽我的主席大大 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <img src="https://randomuser.me/api/portraits/men/11.jpg" class="rounded-circle mb-3" alt="">
+                            <h3 class="card-title mb-3">大家都得聽我的主席大大</h3>
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse officiis praesentium beatae laborum, ratione quis impedit debitis repellat asperiores libero.
+                            </p>
+                            <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-youtube text-dark mx-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 想做好事卻有時弄巧成拙小姐 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <img src="https://randomuser.me/api/portraits/women/11.jpg" class="rounded-circle mb-3" alt="">
+                            <h3 class="card-title mb-3">想做好事卻有時弄巧成拙小姐</h3>
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse officiis praesentium beatae laborum, ratione quis impedit debitis repellat asperiores libero.
+                            </p>
+                            <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-youtube text-dark mx-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 想連任秘書長就臨陣倒戈先生 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <img src="https://randomuser.me/api/portraits/men/12.jpg" class="rounded-circle mb-3" alt="">
+                            <h3 class="card-title mb-3">想連任秘書長就臨陣倒戈先生</h3>
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse officiis praesentium beatae laborum, ratione quis impedit debitis repellat asperiores libero.
+                            </p>
+                            <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-youtube text-dark mx-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 戰亂疫情都不能阻止我奮鬥女權小姐 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <img src="https://randomuser.me/api/portraits/women/12.jpg" class="rounded-circle mb-3" alt="">
+                            <h3 class="card-title mb-3">戰亂疫情都不能阻止我奮鬥女權小姐</h3>
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse officiis praesentium beatae laborum, ratione quis impedit debitis repellat asperiores libero.
+                            </p>
+                            <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-youtube text-dark mx-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Source Code -->
+    <section id="source-code" class="p-5">
+
+    </section>
+
+    <!-- Contact & Map -->
+    <section id="contact" class="p-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md">
+                    <h2 class="text-center mb-4">聯絡資訊</h2>
+                    <ul class="list-group list-group-flush lead">
+                        <li class="list-group-item">
+                            地址: <span class="fw-bold">你家</span>
+                        </li>
+                        <li class="list-group-item">
+                            電話: <span class="fw-bold">+886000000000</span>
+                        </li>
+                        <li class="list-group-item">
+                            手機: <span class="fw-bold">+886900000000</span>
+                        </li>
+                        <li class="list-group-item">
+                            信箱: <span class="fw-bold">email@gamil.com</span>
+                        </li>
+                        <li class="list-group-item">
+                            網址: <span class="fw-bold">https://pornhub.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md">
+                    <div class="text-center">
+                        <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.8229216596696!2d121.50976605713367!3d25.040082821972895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2876dc1b4d647f9!2z5Lit6I-v5rCR5ZyL57i957Wx5bqc!5e0!3m2!1szh-TW!2stw!4v1623635655300!5m2!1szh-TW!2stw"
+                            width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="p-5 bg-dark text-white text-center position-relative">
+        <div class="container">
+            <p class="lead">著作權聲明 &copy; 2021 Bootstrap5練習</p>
+
+            <a href="#" class="position-absolute bottom-0 end-0 p-5">
+                <i class="bi bi-arrow-up-circle h1"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="start-recording" tabindex="-1" aria-labelledby="start-recordingLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="start-recordingLabel">輸入下列資訊就馬上開始</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="mb-3">
+                            <label for="first-name" class="col-form-label">
+                                First Name:
+                            </label>
+                            <input type="text" class="form-control" id="first-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="last-name" class="col-form-label">
+                                Last Name:
+                            </label>
+                            <input type="text" class="form-control" id="last-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="col-form-label">
+                                Email:
+                            </label>
+                            <input type="email" class="form-control" id="email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="col-form-label">
+                                Phone:
+                            </label>
+                            <input type="tel" class="form-control" id="phone">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                    <button type="button" class="btn btn-primary">送出</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- 匯入Bootstrap 5 .js檔 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
