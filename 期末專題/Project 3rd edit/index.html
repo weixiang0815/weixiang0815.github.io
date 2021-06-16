@@ -12,15 +12,15 @@
     <!-- 匯入Bootstrap icon當作favicon -->
     <link rel="shortcut icon" href="img/camera-video.svg" type="image/x-icon">
     <!-- 匯入prism.css檔 -->
-    <link rel="stylesheet" href="prism.css">
+    <link rel="stylesheet" href="./css/prism.css">
     <!-- 匯入自定義.css檔 -->
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="./css/main.css">
     <title>前端期末專題 3rd edit</title>
 </head>
 
 <body>
     <!-- 導覽選單 -->
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
+    <nav id="navbar" class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
         <div class="container">
             <a href="#" class="navbar-brand">前端期末專題 3rd edit</a>
 
@@ -54,7 +54,7 @@
     </nav>
 
     <!-- 主要展示區 -->
-    <section class="bg-dark text-light p-5 text-center text-sm-start">
+    <section id="showcase" class="bg-dark text-light p-5 text-center text-sm-start">
         <div class="container">
             <div class="d-sm-flex align-items-center justify-content-between">
                 <div>
@@ -136,9 +136,9 @@
                     <p>
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus minus aspernatur in dolorem tempora ex fugiat nemo quas perferendis qui voluptatibus harum veritatis perspiciatis rem accusantium doloremque, nostrum eaque exercitationem?
                     </p>
-                    <a href="#" class="btn btn-light mt-3" title="返回上方並點擊左邊 &quot;開始錄製&quot; 按鈕以開始錄影">
+                    <button id="record-right-now" class="btn btn-light mt-3" title="返回上方並點擊左邊 &quot;開始錄製&quot; 按鈕以開始錄影">
                         <i class="bi bi-chevron-right"></i> 馬上錄影
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>
@@ -611,7 +611,7 @@
                     <h2 class="text-center mb-4">聯絡資訊</h2>
                     <ul class="list-group list-group-flush lead">
                         <li class="list-group-item">
-                            地址: <span class="fw-bold">你家</span>
+                            地址: <span class="fw-bold">0000000000</span>
                         </li>
                         <li class="list-group-item">
                             電話: <span class="fw-bold">+886000000000</span>
@@ -623,7 +623,7 @@
                             信箱: <span class="fw-bold">email@gamil.com</span>
                         </li>
                         <li class="list-group-item">
-                            網址: <span class="fw-bold">https://pornhub.com</span>
+                            網址: <span class="fw-bold">0000000000</span>
                         </li>
                     </ul>
                 </div>
@@ -694,12 +694,16 @@
         </div>
     </div>
 
+    <!-- 匯入jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- 匯入Bootstrap 5的.js檔 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <!-- 匯入prism.js檔 -->
-    <script src="prism.js"></script>
+    <script src="./js/prism.js"></script>
+    <!--  -->
+    <script src="./js/index.js"></script>
     <!-- 匯入自定義.js檔 -->
-    <script src="script.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
