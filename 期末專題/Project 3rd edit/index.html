@@ -156,9 +156,9 @@
                     <p>
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus minus aspernatur in dolorem tempora ex fugiat nemo quas perferendis qui voluptatibus harum veritatis perspiciatis rem accusantium doloremque, nostrum eaque exercitationem?
                     </p>
-                    <a href="#" class="btn btn-light mt-3" title="返回上方並點擊左邊 &quot;開始錄製&quot; 按鈕以開始錄影">
-                        <i class="bi bi-chevron-right"></i>現在使用
-                    </a>
+                    <button id="use-it-right-now" class="btn btn-light mt-3" title="返回上方並點擊左邊 &quot;開始錄製&quot; 按鈕以開始錄影">
+                        <i class="bi bi-chevron-right"></i> 現在使用
+                    </button>
                 </div>
                 <div class="col-md">
                     <img src="" alt="" class="img-fluid">
@@ -182,7 +182,7 @@
                             <p>本站用到的技術與套件整理如下:</p>
                             <ur>
                                 <li><strong>BootStrap 5：</strong>網頁前端最知名的必學套件，使用語言為HTML、CSS及JavaScript；用於本站網頁主要排版</li>
-                                <li><strong>Prism函式庫：</strong>輕巧、易學而功能齊全的函式庫，使用語言為CSS及JavaScript；用於本站開放原始碼區的原始碼排版及copy功能</li>
+                                <li><strong>Prism函式庫：</strong>輕巧、易學且功能齊全的函式庫，使用語言為CSS及JavaScript；用於本站開放原始碼區的原始碼排版及copy功能</li>
                                 <li><strong>MediaRecorder API：</strong>打造視訊軟體不可或缺的JavaScript API；用於本站連接攝影機、錄影、播放與下載功能</li>
                             </ur>
                         </div>
@@ -196,18 +196,45 @@
                     <div id="question-two" class="accordion-collapse collapse" data-bs-parent="#questions">
                         <div class="accordion-body">
                             <p>以下列舉推薦免費教學資源:</p>
-                            <ur>
+                            <ul>
                                 <li>
-                                    <strong>BootStrap 5：</strong><a href="https://www.youtube.com/watch?v=4sosXZsdy-s">Traversy Media's Crash Course on YouTube(英文)</a>、<a href="https://bootstrap5.hexschool.com/docs/5.0/getting-started/introduction/">官網Document(繁體中文)</a>
+                                    <strong>BootStrap 5：</strong>
+                                    <ul>
+                                        <li>
+                                            <strong>影片教學：</strong><a href="https://www.youtube.com/watch?v=4sosXZsdy-s" target="_blank">Traversy Media's Crash Course on YouTube(英文)</a>
+                                        </li>
+                                        <li>
+                                            <strong>文章教學：</strong><a href="https://bootstrap5.hexschool.com/docs/5.0/getting-started/introduction/" target="_blank">BootStrap官網DOCs(繁體中文)</a>
+                                        </li>
+                                    </ul>
                                 </li>
+                                <br>
                                 <li>
-                                    <strong>Prism函式庫：</strong><a href="https://www.youtube.com/watch?v=mQaJhQCBwUo">iEatWebsites' Tutorial on YouTube(英文)</a>、<a href="https://prismjs.com/index.html">官網教學(英文)</a>
+                                    <strong>Prism函式庫：</strong>
+                                    <ul>
+                                        <li>
+                                            <strong>影片教學：</strong><a href="https://www.youtube.com/watch?v=mQaJhQCBwUo" target="_blank">iEatWebsites' Tutorial on YouTube(英文)</a>
+                                        </li>
+                                        <li>
+                                            <strong>文章教學：</strong><a href="https://prismjs.com/index.html" target="_blank">Prism.js官網教學(英文)</a>
+                                        </li>
+                                    </ul>
                                 </li>
+                                <br>
                                 <li>
-                                    <strong>MediaRecorder：</strong><a href="https://pjchender.blogspot.com/2018/02/js-javascript-mediarecorder-api.html">PJCHENder部落格教學(繁體中文)</a>、<a href="https://codingshiksha.com/javascript/how-to-record-video-and-audio-from-camera-using-mediarecorder-webrtc-api-in-javascript-full-project/">Coding Shiksha's Blog Post(英文)</a>、
-                                    <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder">MDN Web Doc(英文)</a>
+                                    <strong>MediaRecorder：</strong>
+                                    <ul>
+                                        <li>
+                                            <strong>影片教學：</strong>等我找到就補上來……
+                                        </li>
+                                        <li>
+                                            <strong>文章教學：</strong><a href="https://pjchender.blogspot.com/2018/02/js-javascript-mediarecorder-api.html" target="_blank">PJCHENder部落格教學(繁體中文)</a>、<a href="https://codingshiksha.com/javascript/how-to-record-video-and-audio-from-camera-using-mediarecorder-webrtc-api-in-javascript-full-project/"
+                                                target="_blank">Coding Shiksha's Blog Post(英文)</a>、
+                                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder" target="_blank">MDN Web Doc(英文)</a>
+                                        </li>
+                                    </ul>
                                 </li>
-                            </ur>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -218,7 +245,7 @@
                     </h2>
                     <div id="question-three" class="accordion-collapse collapse" data-bs-parent="#questions">
                         <div class="accordion-body">
-                            本站所使用一切技術與資源皆為免費且無版權聲明要求的線上資源。但良心提醒，套用別人教學範例與某些BootStrap線上模板(免費與付費)，不論出於法律或道德義務，最好還是標註一下出處與來源
+                            本站所使用一切技術與資源皆為免費且無版權聲明要求的線上資源。但良心提醒，套用別人教學範例與某些BootStrap線上模板(免費與付費)，不論出於法律或道德義務，最好還是標註一下出處與來源喔～～
                         </div>
                     </div>
                 </div>
@@ -611,26 +638,27 @@
                     <h2 class="text-center mb-4">聯絡資訊</h2>
                     <ul class="list-group list-group-flush lead">
                         <li class="list-group-item">
-                            地址: <span class="fw-bold">0000000000</span>
+                            地址：<span class="fw-bold">106台北市大安區羅斯福路四段1號</span>
                         </li>
                         <li class="list-group-item">
-                            電話: <span class="fw-bold">+886000000000</span>
+                            電話：<span class="fw-bold">+886227092916</span>
                         </li>
                         <li class="list-group-item">
-                            手機: <span class="fw-bold">+886900000000</span>
+                            手機：<span class="fw-bold">+886988285329</span>
                         </li>
                         <li class="list-group-item">
-                            信箱: <span class="fw-bold">email@gamil.com</span>
+                            信箱：<span class="fw-bold">henry940129@gamil.com</span>
                         </li>
                         <li class="list-group-item">
-                            網址: <span class="fw-bold">0000000000</span>
+                            個人網站：
+                            <a href="https://weixiang0815.github.io/Henry%20Wang's%20Portfolio/index.html" target="_blank"><span class="fw-bold">Henry Wang's Portfolio</span></a>
                         </li>
                     </ul>
                 </div>
                 <!-- 地圖 -->
                 <div class="col-sm">
                     <div class="text-center">
-                        <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.8229216596696!2d121.50976605713367!3d25.040082821972895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2876dc1b4d647f9!2z5Lit6I-v5rCR5ZyL57i957Wx5bqc!5e0!3m2!1szh-TW!2stw!4v1623635655300!5m2!1szh-TW!2stw"
+                        <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.3456630040487!2d121.54175479269655!3d25.022340881640684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aa26065ea50b%3A0x7c79b4b7bb42f485!2z5ZyL56uL6Ie654Gj5aSn5a2456S-5pyD56eR5a246Zmi!5e0!3m2!1szh-TW!2stw!4v1624036376168!5m2!1szh-TW!2stw"
                             width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy">
                     </iframe>
                     </div>
@@ -700,9 +728,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <!-- 匯入prism.js檔 -->
     <script src="./js/prism.js"></script>
-    <!--  -->
+    <!-- 匯入自訂義.js檔 負責主畫面 -->
     <script src="./js/index.js"></script>
-    <!-- 匯入自定義.js檔 -->
+    <!-- 匯入自定義.js檔 負責網站功能 -->
     <script src="./js/script.js"></script>
 </body>
 
