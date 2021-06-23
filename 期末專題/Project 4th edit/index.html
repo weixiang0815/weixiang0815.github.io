@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 匯入Bootstrap 5的.css檔 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- 匯入Bootstrap icon包 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!-- 匯入Bootstrap icon當作favicon -->
+    <link rel="shortcut icon" href="img/camera-video.svg" type="image/x-icon">
+    <!-- 匯入prism.css檔 -->
+    <link rel="stylesheet" href="./css/prism.css">
+    <!-- 匯入自定義.css檔 -->
+    <link rel="stylesheet" href="./css/main.css">
+    <title>前端期末專題 4th edit</title>
+</head>
+
+<body>
+    <!-- 導覽選單 -->
+    <nav id="navbar" class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
+        <div class="container">
+            <a href="#" class="navbar-brand">前端期末專題 4th edit</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">關於</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#functions" class="nav-link">功能</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#learn" class="nav-link">教學</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#questions" class="nav-link">問題</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#source-code" class="nav-link">開放原始碼</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">聯絡資訊</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要展示區 -->
+    <section id="showcase" class="bg-dark text-light p-5 text-center text-sm-start">
+        <div class="container">
+            <div class="d-sm-flex align-items-center justify-content-between">
+                <div>
+                    <h1>歡迎來到<span class="text-warning">本專案練習網站</span></h1>
+                    <p class="lead my-4">
+                        馬上連線攝影機開始錄製影片
+                    </p>
+                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#start-recording">開始錄製</button>
+                </div>
+                <!-- 加一個什麼東西在H1標題旁邊 -->
+                <img class="img-fluid w-50 d-none d-sm-block" src="" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- 關於 -->
+    <section id="about" class="p-5">
+        <div class="container">
+            <h1 class="text-dark text-center pb-4 pt-5">關於本網站</h1>
+            <div class="row text-center g-4">
+                <!-- 虛擬 -->
+                <div class="col-md">
+                    <div class="card bg-dark text-light">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                                <i class="bi bi-laptop"></i>
+                            </div>
+                            <h3 class="card-title mb-3">虛擬</h3>
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum modi repudiandae expedita optio quaerat delectus?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 混合 -->
+                <div class="col-md">
+                    <div class="card bg-secondary text-light">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                                <i class="bi bi-person-square"></i>
+                            </div>
+                            <h3 class="card-title mb-3">混合</h3>
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum modi repudiandae expedita optio quaerat delectus?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 親自 -->
+                <div class="col-md">
+                    <div class="card bg-dark text-light">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                                <i class="bi bi-people"></i>
+                            </div>
+                            <h3 class="card-title mb-3">親自</h3>
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum modi repudiandae expedita optio quaerat delectus?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 功能 -->
+    <section id="functions" class="p-5 bg-primary text-light">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md">
+                    <img src="" alt="" class="img-fluid">
+                </div>
+                <div class="col-md p-5">
+                    <h2>功能介紹</h2>
+                    <p class="lead">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate quae nesciunt, consequatur doloremque aspernatur voluptatum.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus minus aspernatur in dolorem tempora ex fugiat nemo quas perferendis qui voluptatibus harum veritatis perspiciatis rem accusantium doloremque, nostrum eaque exercitationem?
+                    </p>
+                    <button id="record-right-now" class="btn btn-light mt-3" title="返回上方並點擊左邊 &quot;開始錄製&quot; 按鈕以開始錄影">
+                        <i class="bi bi-chevron-right"></i> 馬上錄影
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 教學 -->
+    <section id="learn" class="p-5 bg-dark text-light">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md p-5">
+                    <h2>立即拍攝</h2>
+                    <p class="lead">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate quae nesciunt, consequatur doloremque aspernatur voluptatum.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus minus aspernatur in dolorem tempora ex fugiat nemo quas perferendis qui voluptatibus harum veritatis perspiciatis rem accusantium doloremque, nostrum eaque exercitationem?
+                    </p>
+                    <button id="use-it-right-now" class="btn btn-light mt-3" title="返回上方並點擊左邊 &quot;開始錄製&quot; 按鈕以開始錄影">
+                        <i class="bi bi-chevron-right"></i> 現在使用
+                    </button>
+                </div>
+                <div class="col-md">
+                    <img src="" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 問題 -->
+    <section id="questions" class="p-5">
+        <div class="container">
+            <h2 class="text-center mb-4 pt-5">常見問題</h2>
+            <div class="accordion accordion-flush" id="questions">
+                <!-- 問題一 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-one">這個網站的功能使用哪些技術與套件?</button>
+                    </h2>
+                    <div id="question-one" class="accordion-collapse collapse" data-bs-parent="#questions">
+                        <div class="accordion-body">
+                            <p>本站用到的技術與套件整理如下:</p>
+                            <ur>
+                                <li><strong>BootStrap 5：</strong>網頁前端最知名的必學套件，使用語言為HTML、CSS及JavaScript；用於本站網頁主要排版</li>
+                                <li><strong>Prism函式庫：</strong>輕巧、易學且功能齊全的函式庫，使用語言為CSS及JavaScript；用於本站開放原始碼區的原始碼排版及copy功能</li>
+                                <li><strong>MediaRecorder API：</strong>打造視訊軟體不可或缺的JavaScript API；用於本站連接攝影機、錄影、播放與下載功能</li>
+                            </ur>
+                        </div>
+                    </div>
+                </div>
+                <!-- 問題二 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-two">想做出這個網站的功能該去哪裡學?</button>
+                    </h2>
+                    <div id="question-two" class="accordion-collapse collapse" data-bs-parent="#questions">
+                        <div class="accordion-body">
+                            <p>以下列舉推薦免費教學資源:</p>
+                            <ul>
+                                <li>
+                                    <strong>BootStrap 5：</strong>
+                                    <ul>
+                                        <li>
+                                            <strong>影片教學：</strong><a href="https://www.youtube.com/watch?v=4sosXZsdy-s" target="_blank">Traversy Media's Crash Course on YouTube(英文)</a>
+                                        </li>
+                                        <li>
+                                            <strong>文章教學：</strong><a href="https://bootstrap5.hexschool.com/docs/5.0/getting-started/introduction/" target="_blank">BootStrap官網DOCs(繁體中文)</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <br>
+                                <li>
+                                    <strong>Prism函式庫：</strong>
+                                    <ul>
+                                        <li>
+                                            <strong>影片教學：</strong><a href="https://www.youtube.com/watch?v=mQaJhQCBwUo" target="_blank">iEatWebsites' Tutorial on YouTube(英文)</a>
+                                        </li>
+                                        <li>
+                                            <strong>文章教學：</strong><a href="https://prismjs.com/index.html" target="_blank">Prism.js官網教學(英文)</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <br>
+                                <li>
+                                    <strong>MediaRecorder：</strong>
+                                    <ul>
+                                        <li>
+                                            <strong>影片教學：</strong>等我找到就補上來……
+                                        </li>
+                                        <li>
+                                            <strong>文章教學：</strong><a href="https://pjchender.blogspot.com/2018/02/js-javascript-mediarecorder-api.html" target="_blank">PJCHENder部落格教學(繁體中文)</a>、<a href="https://codingshiksha.com/javascript/how-to-record-video-and-audio-from-camera-using-mediarecorder-webrtc-api-in-javascript-full-project/"
+                                                target="_blank">Coding Shiksha's Blog Post(英文)</a>、
+                                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder" target="_blank">MDN Web Doc(英文)</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- 問題三 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-three">請問這個網站使用的技術有版權限制嗎(ex.需要付費)?</button>
+                    </h2>
+                    <div id="question-three" class="accordion-collapse collapse" data-bs-parent="#questions">
+                        <div class="accordion-body">
+                            本站所使用一切技術與資源皆為免費且無版權聲明要求的線上資源。但良心提醒，套用別人教學範例與某些BootStrap線上模板(免費與付費)，不論出於法律或道德義務，最好還是標註一下出處與來源喔～～
+                        </div>
+                    </div>
+                </div>
+                <!-- 問題四 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-four">為什麼錄好的影音檔沒有聲音?</button>
+                    </h2>
+                    <div id="question-four" class="accordion-collapse collapse" data-bs-parent="#questions">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto placeat, libero numquam dicta suscipit praesentium sapiente est natus. Earum dignissimos veritatis quas, aspernatur cumque reprehenderit exercitationem! Voluptatem, fugit assumenda. Provident
+                            illo quam possimus, maxime, quo fugiat dolores, quas illum necessitatibus temporibus architecto dignissimos sint pariatur cumque repellendus iure eum quidem!
+                        </div>
+                    </div>
+                </div>
+                <!-- 問題五 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-five">為什麼下載的影音檔無法正常播放與匯入剪輯軟體?</button>
+                    </h2>
+                    <div id="question-five" class="accordion-collapse collapse" data-bs-parent="#questions">
+                        <div class="accordion-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto placeat, libero numquam dicta suscipit praesentium sapiente est natus. Earum dignissimos veritatis quas, aspernatur cumque reprehenderit exercitationem! Voluptatem, fugit assumenda. Provident
+                            illo quam possimus, maxime, quo fugiat dolores, quas illum necessitatibus temporibus architecto dignissimos sint pariatur cumque repellendus iure eum quidem!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 開放原始碼 -->
+    <section id="source-code" class="p-5 bg-info">
+        <div class="container">
+            <h1 class="text-center pt-5">開放原始碼</h1>
+            <p class="lead text-center"><strong>此區開放JavaScript及CSS程式碼，歡迎複製與下載並使用在您的專案中</strong></p>
+            <div class="row g-4 text-center">
+                <!-- JS原始碼 -->
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3>JS原始碼</h3>
+                            <pre data-src="./js/prism.js" data-download-link data-download-link-label="歡迎下載" style="height: 300px;">
+                                <code lang="zh-TW" data-prismjs-copy="歡迎複製" data-prismjs-copy-error="錯誤已發生，請改按Ctrl+C複製" data-prismjs-copy-success="程式碼已複製！" class="lang-js">
+                                    'use strict';
+
+                                    /* globals MediaRecorder */
+
+                                    let mediaRecorder;
+                                    let recordedBlobs;
+
+                                    const errorMsgElement = document.querySelector('span#errorMsg');
+                                    const recordedVideo = document.querySelector('video#recorded');
+                                    const recordButton = document.querySelector('button#record');
+                                    const playButton = document.querySelector('button#play');
+                                    const downloadButton = document.querySelector('button#download');
+
+
+                                    recordButton.addEventListener('click', () => {
+                                        if (recordButton.textContent === '開始錄影') {
+                                            startRecording();
+                                        } else {
+                                            stopRecording();
+                                            recordButton.textContent = '開始錄影';
+                                            playButton.disabled = false;
+                                            downloadButton.disabled = false;
+                                        }
+                                    });
+
+
+                                    playButton.addEventListener('click', () => {
+                                        const superBuffer = new Blob(recordedBlobs, { type: 'video/webm' });
+                                        recordedVideo.src = null;
+                                        recordedVideo.srcObject = null;
+                                        recordedVideo.src = window.URL.createObjectURL(superBuffer);
+                                        recordedVideo.controls = true;
+                                        recordedVideo.play();
+                                    });
+
+
+                                    downloadButton.addEventListener('click', () => {
+                                        const blob = new Blob(recordedBlobs, { type: 'video/mp4' });
+                                        const url = window.URL.createObjectURL(blob);
+                                        const a = document.createElement('a');
+                                        a.style.display = 'none';
+                                        a.href = url;
+                                        a.download = '測試.mp4';
+                                        document.body.appendChild(a);
+                                        a.click();
+                                        setTimeout(() => {
+                                            document.body.removeChild(a);
+                                            window.URL.revokeObjectURL(url);
+                                        }, 100);
+                                    });
+
+                                    function handleDataAvailable(event) {
+                                        console.log('handleDataAvailable', event);
+                                        if (event.data && event.data.size > 0) {
+                                            recordedBlobs.push(event.data);
+                                        }
+                                    }
+
+                                    function startRecording() {
+                                        recordedBlobs = [];
+                                        let options = { mimeType: 'video/webm;codecs=vp9,opus' };
+                                        try {
+                                            mediaRecorder = new MediaRecorder(window.stream, options);
+                                        } catch (e) {
+                                            console.error('Exception while creating MediaRecorder:', e);
+                                            errorMsgElement.innerHTML = `Exception while creating MediaRecorder: ${JSON.stringify(e)}`;
+                                            return;
+                                        }
+
+                                        console.log('Created MediaRecorder', mediaRecorder, 'with options', options);
+                                        recordButton.textContent = '停止錄影';
+                                        playButton.disabled = true;
+                                        downloadButton.disabled = true;
+                                        mediaRecorder.onstop = (event) => {
+                                            console.log('Recorder stopped: ', event);
+                                            console.log('Recorded Blobs: ', recordedBlobs);
+                                        };
+                                        mediaRecorder.ondataavailable = handleDataAvailable;
+                                        mediaRecorder.start();
+                                        console.log('MediaRecorder started', mediaRecorder);
+                                    }
+
+                                    function stopRecording() {
+                                        mediaRecorder.stop();
+                                    }
+
+                                    function handleSuccess(stream) {
+                                        recordButton.disabled = false;
+                                        console.log('getUserMedia() got stream:', stream);
+                                        window.stream = stream;
+
+                                        const gumVideo = document.querySelector('video#gum');
+                                        gumVideo.srcObject = stream;
+                                    }
+
+                                    async function init(constraints) {
+                                        try {
+                                            const stream = await navigator.mediaDevices.getUserMedia(constraints);
+                                            handleSuccess(stream);
+                                        } catch (e) {
+                                            console.error('navigator.getUserMedia error:', e);
+                                            errorMsgElement.innerHTML = `navigator.getUserMedia error:${e.toString()}`;
+                                        }
+                                    }
+
+                                    document.querySelector('button#start').addEventListener('click', async() => {
+                                        const hasEchoCancellation = document.querySelector('#echoCancellation').checked;
+                                        const constraints = {
+                                            audio: {
+                                                echoCancellation: { exact: hasEchoCancellation }
+                                            },
+                                            video: {
+                                                width: 1280,
+                                                height: 720
+                                            }
+                                        };
+                                        console.log('Using media constraints:', constraints);
+                                        await init(constraints);
+                                    });
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+                <!-- CSS原始碼 -->
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3>CSS原始碼</h3>
+                            <pre data-src="./css/prism.css" data-download-link data-download-link-label="歡迎下載" style="height: 300px;">
+                                <code lang="zh-TW" data-prismjs-copy="歡迎複製" data-prismjs-copy-error="錯誤已發生，請改按Ctrl+C複製" data-prismjs-copy-success="程式碼已複製！" class="lang-css">
+                                    /* PrismJS 1.23.0
+                                    https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript&plugins=show-language+normalize-whitespace+toolbar+copy-to-clipboard+download-button */
+                                    
+                                    
+                                    /**
+                                     * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
+                                     * Based on https://github.com/chriskempson/tomorrow-theme
+                                     * @author Rose Pritchard
+                                     */
+                                    
+                                    code[class*="language-"],
+                                    pre[class*="language-"] {
+                                        color: #ccc;
+                                        background: none;
+                                        font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+                                        font-size: 1em;
+                                        text-align: left;
+                                        white-space: pre;
+                                        word-spacing: normal;
+                                        word-break: normal;
+                                        word-wrap: normal;
+                                        line-height: 1.5;
+                                        -moz-tab-size: 4;
+                                        -o-tab-size: 4;
+                                        tab-size: 4;
+                                        -webkit-hyphens: none;
+                                        -moz-hyphens: none;
+                                        -ms-hyphens: none;
+                                        hyphens: none;
+                                    }
+                                    
+                                    
+                                    /* Code blocks */
+                                    
+                                    pre[class*="language-"] {
+                                        padding: 1em;
+                                        margin: .5em 0;
+                                        overflow: auto;
+                                    }
+                                    
+                                    :not(pre)>code[class*="language-"],
+                                    pre[class*="language-"] {
+                                        background: #2d2d2d;
+                                    }
+                                    
+                                    
+                                    /* Inline code */
+                                    
+                                    :not(pre)>code[class*="language-"] {
+                                        padding: .1em;
+                                        border-radius: .3em;
+                                        white-space: normal;
+                                    }
+                                    
+                                    .token.comment,
+                                    .token.block-comment,
+                                    .token.prolog,
+                                    .token.doctype,
+                                    .token.cdata {
+                                        color: #999;
+                                    }
+                                    
+                                    .token.punctuation {
+                                        color: #ccc;
+                                    }
+                                    
+                                    .token.tag,
+                                    .token.attr-name,
+                                    .token.namespace,
+                                    .token.deleted {
+                                        color: #e2777a;
+                                    }
+                                    
+                                    .token.function-name {
+                                        color: #6196cc;
+                                    }
+                                    
+                                    .token.boolean,
+                                    .token.number,
+                                    .token.function {
+                                        color: #f08d49;
+                                    }
+                                    
+                                    .token.property,
+                                    .token.class-name,
+                                    .token.constant,
+                                    .token.symbol {
+                                        color: #f8c555;
+                                    }
+                                    
+                                    .token.selector,
+                                    .token.important,
+                                    .token.atrule,
+                                    .token.keyword,
+                                    .token.builtin {
+                                        color: #cc99cd;
+                                    }
+                                    
+                                    .token.string,
+                                    .token.char,
+                                    .token.attr-value,
+                                    .token.regex,
+                                    .token.variable {
+                                        color: #7ec699;
+                                    }
+                                    
+                                    .token.operator,
+                                    .token.entity,
+                                    .token.url {
+                                        color: #67cdcc;
+                                    }
+                                    
+                                    .token.important,
+                                    .token.bold {
+                                        font-weight: bold;
+                                    }
+                                    
+                                    .token.italic {
+                                        font-style: italic;
+                                    }
+                                    
+                                    .token.entity {
+                                        cursor: help;
+                                    }
+                                    
+                                    .token.inserted {
+                                        color: green;
+                                    }
+                                    
+                                    div.code-toolbar {
+                                        position: relative;
+                                    }
+                                    
+                                    div.code-toolbar>.toolbar {
+                                        position: absolute;
+                                        top: .3em;
+                                        right: .2em;
+                                        transition: opacity 0.3s ease-in-out;
+                                        opacity: 0;
+                                    }
+                                    
+                                    div.code-toolbar:hover>.toolbar {
+                                        opacity: 1;
+                                    }
+                                    
+                                    
+                                    /* Separate line b/c rules are thrown out if selector is invalid.
+                                       IE11 and old Edge versions don't support :focus-within. */
+                                    
+                                    div.code-toolbar:focus-within>.toolbar {
+                                        opacity: 1;
+                                    }
+                                    
+                                    div.code-toolbar>.toolbar .toolbar-item {
+                                        display: inline-block;
+                                    }
+                                    
+                                    div.code-toolbar>.toolbar a {
+                                        cursor: pointer;
+                                    }
+                                    
+                                    div.code-toolbar>.toolbar button {
+                                        background: none;
+                                        border: 0;
+                                        color: inherit;
+                                        font: inherit;
+                                        line-height: normal;
+                                        overflow: visible;
+                                        padding: 0;
+                                        -webkit-user-select: none;
+                                        /* for button */
+                                        -moz-user-select: none;
+                                        -ms-user-select: none;
+                                    }
+                                    
+                                    div.code-toolbar>.toolbar a,
+                                    div.code-toolbar>.toolbar button,
+                                    div.code-toolbar>.toolbar span {
+                                        color: #bbb;
+                                        font-size: .8em;
+                                        padding: 0 .5em;
+                                        background: #f5f2f0;
+                                        background: rgba(224, 224, 224, 0.2);
+                                        box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2);
+                                        border-radius: .5em;
+                                    }
+                                    
+                                    div.code-toolbar>.toolbar a:hover,
+                                    div.code-toolbar>.toolbar a:focus,
+                                    div.code-toolbar>.toolbar button:hover,
+                                    div.code-toolbar>.toolbar button:focus,
+                                    div.code-toolbar>.toolbar span:hover,
+                                    div.code-toolbar>.toolbar span:focus {
+                                        color: inherit;
+                                        text-decoration: none;
+                                    }
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 聯絡資訊 & 地圖 -->
+    <section id="contact" class="p-5">
+        <div class="container">
+            <br>
+            <br>
+            <br>
+            <div class="row g-4">
+                <!-- 聯絡資訊 -->
+                <div class="col-sm">
+                    <h2 class="text-center mb-4">聯絡資訊</h2>
+                    <ul class="list-group list-group-flush lead">
+                        <li class="list-group-item">
+                            地址：<span class="fw-bold">106台北市大安區羅斯福路四段1號</span>
+                        </li>
+                        <li class="list-group-item">
+                            電話：<span class="fw-bold">+886227092916</span>
+                        </li>
+                        <li class="list-group-item">
+                            手機：<span class="fw-bold">+886988285329</span>
+                        </li>
+                        <li class="list-group-item">
+                            信箱：<span class="fw-bold">henry940129@gamil.com</span>
+                        </li>
+                        <li class="list-group-item">
+                            個人網站：
+                            <a href="https://weixiang0815.github.io/Henry%20Wang's%20Portfolio/index.html" target="_blank"><span class="fw-bold">Henry Wang's Portfolio</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 地圖 -->
+                <div class="col-sm">
+                    <div class="text-center">
+                        <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.3456630040487!2d121.54175479269655!3d25.022340881640684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aa26065ea50b%3A0x7c79b4b7bb42f485!2z5ZyL56uL6Ie654Gj5aSn5a2456S-5pyD56eR5a246Zmi!5e0!3m2!1szh-TW!2stw!4v1624036376168!5m2!1szh-TW!2stw"
+                            width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 著作權聲明 -->
+    <footer class="p-5 bg-dark text-white text-center position-relative">
+        <div class="container">
+            <p class="lead">著作權聲明 &copy; 前端期末專題 4th edit</p>
+
+            <a href="#" class="position-absolute bottom-0 end-0 p-5">
+                <i class="bi bi-arrow-up-circle h1"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- 錄影設定彈出視窗 -->
+    <div class="modal fade" id="start-recording" tabindex="-1" aria-labelledby="start-recordingLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="start-recordingLabel">設定下列資訊即可開始錄影</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="mb-3">
+                            <label for="first-name" class="col-form-label">
+                            First Name:
+                        </label>
+                            <input type="text" class="form-control" id="first-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="last-name" class="col-form-label">
+                            Last Name:
+                        </label>
+                            <input type="text" class="form-control" id="last-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="col-form-label">
+                            Email:
+                        </label>
+                            <input type="email" class="form-control" id="email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="col-form-label">
+                            Phone:
+                        </label>
+                            <input type="tel" class="form-control" id="phone">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                    <button type="button" class="btn btn-primary">開始錄影</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 匯入jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- 匯入Bootstrap 5的.js檔 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <!-- 匯入prism.js檔 -->
+    <script src="./js/prism.js"></script>
+    <!-- 匯入自訂義.js檔 負責主畫面 -->
+    <script src="./js/index.js"></script>
+    <!-- 匯入自定義.js檔 負責網站功能 -->
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
