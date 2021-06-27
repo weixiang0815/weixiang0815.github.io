@@ -56,23 +56,8 @@
 
     <!-- 主要展示區 -->
     <section id="showcase" class="bg-dark text-light p-5 text-center text-sm-start">
-        <!-- 歡迎標語 -->
-        <div id="welcome" class="container">
-            <div class="d-sm-flex align-items-center justify-content-between">
-                <div>
-                    <h1>歡迎來到<span class="text-warning">本專案練習網站</span></h1>
-                    <p class="lead my-4">
-                        馬上連線攝影機開始錄製影片
-                    </p>
-                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#start-recording">開始錄製</button>
-                </div>
-                <!-- 加一個什麼東西在H1標題旁邊 -->
-                <img class="img-fluid w-50 d-none d-sm-block" src="" alt="">
-            </div>
-        </div>
-
         <!-- 錄影裝置 -->
-        <div id="recorder" class="" hidden="true">
+        <div class="container" id="recorder">
             <video src="" id="gum" playsinline autoplay muted></video>
             <video src="" id="recorded" playsinline loop></video>
 
@@ -81,6 +66,7 @@
                 <button class="btn btn-primary btn-lg" id="record" disabled>開始錄影</button>
                 <button class="btn btn-primary btn-lg" id="play" disabled>播放錄影</button>
                 <button class="btn btn-primary btn-lg" id="download" disabled>下載錄影檔</button>
+                <button class="btn btn-primary btn-lg" id="back-to-welcome">返回</button>
             </div>
 
             <div>
@@ -92,6 +78,22 @@
 
             <div>
                 <span id="errorMsg"></span>
+            </div>
+        </div>
+
+        <!-- 歡迎標語 -->
+        <div id="welcome" class="container">
+            <div class="d-sm-flex align-items-center justify-content-between">
+                <div>
+                    <h1>歡迎來到<span class="text-warning">本專案練習網站</span></h1>
+                    <p class="lead my-4" id="welcome-word">
+                        馬上連線攝影機開始錄製影片
+                    </p>
+                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#start-recording" id="start-recording-button">開始錄製</button>
+                    <button class="btn btn-primary btn-lg" id="back-to-recording">繼續錄影</button>
+                </div>
+                <!-- 加一個什麼東西在H1標題旁邊 -->
+                <img class="img-fluid w-50 d-none d-sm-block" src="" alt="">
             </div>
         </div>
     </section>

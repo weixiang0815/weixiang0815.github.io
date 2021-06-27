@@ -22,4 +22,23 @@ $(() => {
     })
 })
 
-// 設計"影片資訊設定彈出視窗"畫面互動功能
+// 設計"主要展示區"中"歡迎標語"與"錄影裝置"來回切換的功能畫面互動功能
+$(() => {
+    $('#recorder').hide()
+    $('#back-to-recording').hide()
+})
+$('#send-the-info').on('click', () => {
+    $('#welcome').slideUp(1000)
+    $('#recorder').slideDown(1000)
+    $('#back-to-recording').show(1000)
+    $('#start-recording-button').fadeOut(1000)
+})
+$('#back-to-welcome').on('click', () => {
+    document.getElementById('welcome-word').innerText = '想繼續錄影嗎?'
+    $('#welcome').slideDown(1000)
+    $('#recorder').slideUp(1000)
+})
+$('#back-to-recording').on('click', () => {
+    $('#welcome').slideUp(1000)
+    $('#recorder').slideDown(1000)
+})
