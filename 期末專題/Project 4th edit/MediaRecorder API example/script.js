@@ -11,7 +11,14 @@ const recordButton = document.querySelector('button#record');
 const playButton = document.querySelector('button#play');
 const downloadButton = document.querySelector('button#download');
 
+// 按下跳出視窗的"開始錄影"按鈕後，傳送檔案名稱與畫質的value到此.js檔中的變數
+$('#send-the-info').on('click', () => {
+    var res_width = $('#resolution');
+    var res_height = $('#resolution').val() / 9 * 16;
+    var filename = $('#filename').val() + '.mp4';
+});
 
+// "錄影裝置"區裡"開始錄影"按鈕的功能
 recordButton.addEventListener('click', () => {
     if (recordButton.textContent === '開始錄影') {
         startRecording();
@@ -23,7 +30,7 @@ recordButton.addEventListener('click', () => {
     }
 });
 
-
+// "錄影裝置"區裡"播放錄影"按鈕的功能
 playButton.addEventListener('click', () => {
     const superBuffer = new Blob(recordedBlobs, { type: 'video/webm' });
     recordedVideo.src = null;
@@ -33,14 +40,14 @@ playButton.addEventListener('click', () => {
     recordedVideo.play();
 });
 
-
+// "錄影裝置"區裡"下載錄影檔"按鈕的功能
 downloadButton.addEventListener('click', () => {
     const blob = new Blob(recordedBlobs, { type: 'video/mp4' });
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.style.display = 'none';
     a.href = url;
-    a.download = '測試.mp4';
+    a.download = filename;
     document.body.appendChild(a);
     a.click();
     setTimeout(() => {
@@ -67,6 +74,10 @@ function startRecording() {
         return;
     }
 
+    res_width = $('#resolution');
+    res_height = $('#resolution').val() / 9 * 16;
+    filename = $('#filename').val() + '.mp4';
+    // 記得要將value來源改成錄影裝置啟動後出現的選單
     console.log('Created MediaRecorder', mediaRecorder, 'with options', options);
     recordButton.textContent = '停止錄影';
     playButton.disabled = true;
@@ -105,8 +116,6 @@ async function init(constraints) {
 
 document.querySelector('button#start').addEventListener('click', async() => {
     const hasEchoCancellation = document.querySelector('#echoCancellation').checked;
-    let width_res = 1280;
-    let height_res = width_res / 16 * 9;
     const constraints = {
         audio: {
             echoCancellation: { exact: hasEchoCancellation }

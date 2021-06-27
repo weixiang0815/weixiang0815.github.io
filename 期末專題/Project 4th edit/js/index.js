@@ -29,11 +29,20 @@ $(() => {
     $('#get-open-source').hide();
 });
 $('#send-the-info').on('click', () => {
-    $('#welcome').slideUp(1000);
-    $('#recorder').slideDown(1000);
-    $('#back-to-recording').show(1000);
-    $('#get-open-source').show(1000);
-    $('#start-recording-button').fadeOut(1000);
+    if ($('#filename').val() != "" && $('#resolution').val() != "") {
+        $('#welcome').slideUp(1000);
+        $('#recorder').slideDown(1000);
+        $('#back-to-recording').show(1000);
+        $('#get-open-source').show(1000);
+        $('#start-recording-button').fadeOut(1000);
+    } else {
+        if ($('#filename').val() == "") {
+            alert("檔案名稱不得為空白");
+        }
+        if ($('#resolution').val() == "") {
+            alert("請選擇一種畫質");
+        }
+    }
 });
 $('#back-to-welcome').on('click', () => {
     document.getElementById('welcome-word').innerText = '想繼續錄影嗎? 還是想要自己做一個?';
