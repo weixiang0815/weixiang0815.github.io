@@ -1,3 +1,5 @@
+/* 設定整體網頁中BootStrap以外的排版 */
+
 body::before {
     display: block;
     content: '';
@@ -13,3 +15,6 @@ body::before {
         width: 50%;
     }
 }
+
+
+/* 設定"主要展示區"欄位中"錄影裝置"區的排版 */
