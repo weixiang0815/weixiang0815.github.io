@@ -21,3 +21,5 @@ $(() => {
         modalStartRecording.show()
     })
 })
+
+// 設計"影片資訊設定彈出視窗"畫面互動功能

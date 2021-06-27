@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>前端期末專題 4th edit</title>
+
     <!-- 匯入Bootstrap 5的.css檔 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <!-- 匯入Bootstrap icon包 -->
@@ -15,7 +17,6 @@
     <link rel="stylesheet" href="./css/prism.css">
     <!-- 匯入自定義.css檔 -->
     <link rel="stylesheet" href="./css/main.css">
-    <title>前端期末專題 4th edit</title>
 </head>
 
 <body>
@@ -56,7 +57,7 @@
     <!-- 主要展示區 -->
     <section id="showcase" class="bg-dark text-light p-5 text-center text-sm-start">
         <!-- 歡迎標語 -->
-        <div class="container">
+        <div id="welcome" class="container">
             <div class="d-sm-flex align-items-center justify-content-between">
                 <div>
                     <h1>歡迎來到<span class="text-warning">本專案練習網站</span></h1>
@@ -714,34 +715,31 @@
                 <div class="modal-body">
                     <form action="">
                         <div class="mb-3">
-                            <label for="first-name" class="col-form-label">
-                            First Name:
+                            <label for="filename" class="col-form-label">
+                            檔案命名:
                         </label>
-                            <input type="text" class="form-control" id="first-name">
+                            <input type="text" class="form-control" id="filename">
                         </div>
                         <div class="mb-3">
-                            <label for="last-name" class="col-form-label">
-                            Last Name:
+                            <label for="resolution" class="col-form-label">
+                            畫質:
                         </label>
-                            <input type="text" class="form-control" id="last-name">
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="col-form-label">
-                            Email:
-                        </label>
-                            <input type="email" class="form-control" id="email">
-                        </div>
-                        <div class="mb-3">
-                            <label for="phone" class="col-form-label">
-                            Phone:
-                        </label>
-                            <input type="tel" class="form-control" id="phone">
+                            <select class="form-control" id="resolution">
+                                <option value="">請選擇一種畫質</option>
+                                <option value="2156">2156p (4K)</option>
+                                <option value="1440">1440p (2K)</option>
+                                <option value="1080">1080p (HD)</option>
+                                <option value="720">720p (HD)</option>
+                                <option value="480">480p</option>
+                                <option value="360">360p</option>
+                                <option value="240">240p</option>
+                            </select>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
-                    <button type="button" class="btn btn-primary">開始錄影</button>
+                    <button id="send-the-info" type="button" class="btn btn-primary" data-bs-dismiss="modal">開始錄影</button>
                 </div>
             </div>
         </div>
