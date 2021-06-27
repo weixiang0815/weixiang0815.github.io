@@ -58,15 +58,21 @@
     <section id="showcase" class="bg-dark text-light p-5 text-center text-sm-start">
         <!-- 錄影裝置 -->
         <div class="container" id="recorder">
-            <video src="" id="gum" playsinline autoplay muted></video>
-            <video src="" id="recorded" playsinline loop></video>
+            <div class="row text-center">
+                <div class="col-sm pt-3 pb-3">
+                    <video src="" id="gum" playsinline autoplay muted></video>
+                </div>
+                <div class="col-sm pt-3 pb-3">
+                    <video src="" id="recorded" playsinline loop></video>
+                </div>
+            </div>
 
-            <div>
-                <button class="btn btn-primary btn-lg" id="start">啟動攝影機</button>
-                <button class="btn btn-primary btn-lg" id="record" disabled>開始錄影</button>
-                <button class="btn btn-primary btn-lg" id="play" disabled>播放錄影</button>
-                <button class="btn btn-primary btn-lg" id="download" disabled>下載錄影檔</button>
-                <button class="btn btn-primary btn-lg" id="back-to-welcome">返回</button>
+            <div id="button-group" class="container pt-3 pb-3">
+                <button class="btn btn-primary btn-md" id="start">啟動攝影機</button>
+                <button class="btn btn-primary btn-md" id="record" disabled>開始錄影</button>
+                <button class="btn btn-primary btn-md" id="play" disabled>播放錄影</button>
+                <button class="btn btn-primary btn-md" id="download" disabled>下載錄影檔</button>
+                <button class="btn btn-primary btn-md" id="back-to-welcome">返回</button>
             </div>
 
             <div>
@@ -91,6 +97,9 @@
                     </p>
                     <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#start-recording" id="start-recording-button">開始錄製</button>
                     <button class="btn btn-primary btn-lg" id="back-to-recording">繼續錄影</button>
+                    <a href="#source-code" id="get-open-source">
+                        <button class="btn btn-primary btn-lg">取得原始碼</button>
+                    </a>
                 </div>
                 <!-- 加一個什麼東西在H1標題旁邊 -->
                 <img class="img-fluid w-50 d-none d-sm-block" src="" alt="">
@@ -720,7 +729,7 @@
                             <label for="filename" class="col-form-label">
                             檔案命名:
                         </label>
-                            <input type="text" class="form-control" id="filename">
+                            <input type="text" class="form-control" id="filename" required>
                         </div>
                         <div class="mb-3">
                             <label for="resolution" class="col-form-label">
@@ -734,7 +743,6 @@
                                 <option value="720">720p (HD)</option>
                                 <option value="480">480p</option>
                                 <option value="360">360p</option>
-                                <option value="240">240p</option>
                             </select>
                         </div>
                     </form>

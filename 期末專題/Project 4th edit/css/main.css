@@ -18,3 +18,9 @@ body::before {
 
 
 /* 設定"主要展示區"欄位中"錄影裝置"區的排版 */
+
+video {
+    vertical-align: top;
+    --width: 42vw;
+    width: var(--width);
+}
