@@ -1,0 +1,26 @@
+/* 設定整體網頁中BootStrap以外的排版 */
+
+body::before {
+    display: block;
+    content: '';
+    height: 60px;
+}
+
+#map {
+    border-radius: 10px;
+}
+
+@media(min-width: 768px) {
+    .news-input {
+        width: 50%;
+    }
+}
+
+
+/* 設定"主要展示區"欄位中"錄影裝置"區的排版 */
+
+video {
+    vertical-align: top;
+    --width: 42vw;
+    width: var(--width);
+}
