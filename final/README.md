@@ -42,4 +42,4 @@ ___
 ___
 ## 各種連結:
 * ### [專題成品](https://weixiang0815.github.io/final/index.html "將開啟本專題的網頁")
-* ### [專題介紹影片](http:// "將從Google雲端開啟專題介紹影片")
+* ### [專題介紹影片](https://drive.google.com/file/d/1urPRo93PXw1QYn2uBPelvK1bLxZpTF6W/view?usp=sharing "將從Google雲端開啟專題介紹影片")
