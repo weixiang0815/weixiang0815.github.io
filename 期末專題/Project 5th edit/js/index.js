@@ -1,3 +1,5 @@
+/* 負責主網頁中排版相關的互動功能 */
+
 // 讓"功能介紹"欄位中的"馬上錄影"按鈕，一按就畫面至頂並打開設定錄影資訊的彈出視窗
 $(() => {
     let eleStartRecording = document.getElementById('start-recording');
@@ -27,6 +29,7 @@ $(() => {
     $('#recorder').hide();
     $('#back-to-recording').hide();
     $('#get-open-source').hide();
+    $('#restriction').hide();
 });
 $('#send-the-info').on('click', () => {
     if ($('#filename').val() != "" && $('#resolution').val() != "") {
@@ -35,17 +38,10 @@ $('#send-the-info').on('click', () => {
         $('#back-to-recording').show(1000);
         $('#get-open-source').show(1000);
         $('#start-recording-button').fadeOut(1000);
-    } else {
-        if ($('#filename').val() == "") {
-            alert("檔案名稱不得為空白");
-        }
-        if ($('#resolution').val() == "") {
-            alert("請選擇一種畫質");
-        }
     }
 });
 $('#back-to-welcome').on('click', () => {
-    document.getElementById('welcome-word').innerText = '想繼續錄影嗎? 還是想要自己做一個?';
+    document.getElementById('welcome-word').innerText = '想繼續錄影嗎? 還是要自己做一個?';
     $('#welcome').slideDown(1000);
     $('#recorder').slideUp(1000);
 })

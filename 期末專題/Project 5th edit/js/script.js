@@ -1,4 +1,4 @@
-// 負責"主要展示區"欄位中"錄影裝置"區的各種功能
+/* 負責"主要展示區"欄位中"錄影裝置"區的互動功能 */
 
 let mediaRecorder;
 let recordedBlobs;
@@ -8,7 +8,27 @@ const recordedVideo = document.querySelector('video#recorded');
 const recordButton = document.querySelector('button#record');
 const playButton = document.querySelector('button#play');
 const downloadButton = document.querySelector('button#download');
+var count = 0;
 
+$('#send-the-info').on('click', () => {
+    if ($('#filename').val() != "" && $('#resolution').val() != "") {
+        count++;
+        if (count > 1) {
+            $("button#start").text('啟用新設定');
+            $("p#new-setting-reminder").text('若要套用新的影片設定，記得點選"起用新設定"喔!');
+            $("button#start").on("click", () => {
+                $("p#new-setting-reminder").remove();
+            });
+        }
+    } else {
+        if ($('#filename').val() == "") {
+            alert("檔案名稱不得為空白");
+        }
+        if ($('#resolution').val() == "") {
+            alert("請選擇一種畫質");
+        }
+    };
+});
 
 recordButton.addEventListener('click', () => {
     if (recordButton.textContent === '開始錄影') {
@@ -38,7 +58,7 @@ downloadButton.addEventListener('click', () => {
     const a = document.createElement('a');
     a.style.display = 'none';
     a.href = url;
-    a.download = '測試.mp4';
+    a.download = $('#filename').val() + '.mp4';
     document.body.appendChild(a);
     a.click();
     setTimeout(() => {
@@ -108,8 +128,8 @@ document.querySelector('button#start').addEventListener('click', async() => {
             echoCancellation: { exact: hasEchoCancellation }
         },
         video: {
-            width: 1280,
-            height: 720
+            width: $('#resolution').val() / 9 * 16,
+            height: $('#resolution').val()
         }
     };
     console.log('Using media constraints:', constraints);
