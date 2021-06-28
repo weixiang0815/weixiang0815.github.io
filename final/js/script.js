@@ -14,12 +14,8 @@ var count = 0;
 $('#send-the-info').on('click', () => {
     if ($('#filename').val() != "" && $('#resolution').val() != "") {
         count++;
-        if (count > 1) {
+        if (count == 2) {
             $("button#start").text('啟用新設定');
-            $("p#new-setting-reminder").text('若要套用新的影片設定，記得點選"啟用新設定"喔!');
-            $("button#start").on("click", () => {
-                $("p#new-setting-reminder").empty();
-            });
         }
     } else {
         if ($('#filename').val() == "") {
@@ -29,6 +25,12 @@ $('#send-the-info').on('click', () => {
             alert("請選擇一種畫質");
         }
     };
+    if (count > 1) {
+        $("p#new-setting-reminder").text('若要套用新的影片設定，記得點選"啟用新設定"喔!');
+        $("button#start").on("click", () => {
+            $("p#new-setting-reminder").empty();
+        });
+    }
 });
 
 // 錄影裝置裡"開始錄影"按鈕的功能
