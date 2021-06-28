@@ -322,16 +322,79 @@
             <h1 class="text-center pt-5">開放原始碼</h1>
             <p class="lead text-center"><strong>此區開放JavaScript及CSS程式碼，歡迎複製與下載並使用在您的專案中</strong></p>
             <div class="row g-4 text-center">
-                <!-- JS原始碼 -->
-                <div class="col-md-6">
+                <!-- index.js原始碼 -->
+                <div class="col-md-4">
                     <div class="card">
                         <div class="card-body">
                             <h3>JS原始碼</h3>
-                            <pre data-src="./js/prism.js" data-download-link data-download-link-label="歡迎下載" style="height: 300px;">
+                            <p>此區負責主網頁排版的互動功能</p>
+                            <pre data-src="./js/index.js" data-download-link data-download-link-label="歡迎下載" style="height: 300px;">
                                 <code lang="zh-TW" data-prismjs-copy="歡迎複製" data-prismjs-copy-error="錯誤已發生，請改按Ctrl+C複製" data-prismjs-copy-success="程式碼已複製！" class="lang-js">
-                                    'use strict';
+                                    /* 負責主網頁中排版相關的互動功能 */
 
-                                    /* globals MediaRecorder */
+                                    // 讓"功能介紹"欄位中的"馬上錄影"按鈕，一按就畫面至頂並打開設定錄影資訊的彈出視窗
+                                    $(() => {
+                                        let eleStartRecording = document.getElementById('start-recording');
+                                        let modalStartRecording = new bootstrap.Modal(eleStartRecording);
+                                        $('#record-right-now').on('click', () => {
+                                            $("html,body").animate({
+                                                scrollTop: 0
+                                            }, 1);
+                                            modalStartRecording.show();
+                                        });
+                                    });
+
+                                    // 讓"立即拍攝"欄位中的"現在使用"按鈕，一按就畫面至頂並打開設定錄影資訊的彈出視窗
+                                    $(() => {
+                                        let eleStartRecording = document.getElementById('start-recording');
+                                        let modalStartRecording = new bootstrap.Modal(eleStartRecording);
+                                        $('#use-it-right-now').on('click', () => {
+                                            $("html,body").animate({
+                                                scrollTop: 0
+                                            }, 1);
+                                            modalStartRecording.show();
+                                        });
+                                    });
+
+                                    // 設計"主要展示區"中"歡迎標語"與"錄影裝置"來回切換的功能畫面互動功能
+                                    $(() => {
+                                        $('#recorder').hide();
+                                        $('#back-to-recording').hide();
+                                        $('#get-open-source').hide();
+                                        $('#restriction').hide();
+                                    });
+                                    $('#send-the-info').on('click', () => {
+                                        if ($('#filename').val() != "" && $('#resolution').val() != "") {
+                                            $('#welcome').slideUp(1000);
+                                            $('#recorder').slideDown(1000);
+                                            $('#back-to-recording').show(1000);
+                                            $('#get-open-source').show(1000);
+                                            $('#start-recording-button').fadeOut(1000);
+                                        }
+                                    });
+                                    $('#back-to-welcome').on('click', () => {
+                                        document.getElementById('welcome-word').innerText = '想繼續錄影嗎? 還是要自己做一個?';
+                                        $('#welcome').slideDown(1000);
+                                        $('#recorder').slideUp(1000);
+                                    })
+                                    $('#back-to-recording').on('click', () => {
+                                        $('#welcome').slideUp(1000);
+                                        $('#recorder').slideDown(1000);
+                                    });
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+                <!-- script.js原始碼 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3>JS原始碼</h3>
+                            <p>此區負責本網頁錄影功能</p>
+                            <pre data-src="./js/script.js" data-download-link data-download-link-label="歡迎下載" style="height: 300px;">
+                                <code lang="zh-TW" data-prismjs-copy="歡迎複製" data-prismjs-copy-error="錯誤已發生，請改按Ctrl+C複製" data-prismjs-copy-success="程式碼已複製！" class="lang-js">
+                                    /* 負責"主要展示區"欄位中"錄影裝置"區的互動功能 */
 
                                     let mediaRecorder;
                                     let recordedBlobs;
@@ -341,7 +404,27 @@
                                     const recordButton = document.querySelector('button#record');
                                     const playButton = document.querySelector('button#play');
                                     const downloadButton = document.querySelector('button#download');
+                                    var count = 0;
 
+                                    $('#send-the-info').on('click', () => {
+                                        if ($('#filename').val() != "" && $('#resolution').val() != "") {
+                                            count++;
+                                            if (count > 1) {
+                                                $("button#start").text('啟用新設定');
+                                                $("p#new-setting-reminder").text('若要套用新的影片設定，記得點選"起用新設定"喔!');
+                                                $("button#start").on("click", () => {
+                                                    $("p#new-setting-reminder").remove();
+                                                });
+                                            }
+                                        } else {
+                                            if ($('#filename').val() == "") {
+                                                alert("檔案名稱不得為空白");
+                                            }
+                                            if ($('#resolution').val() == "") {
+                                                alert("請選擇一種畫質");
+                                            }
+                                        };
+                                    });
 
                                     recordButton.addEventListener('click', () => {
                                         if (recordButton.textContent === '開始錄影') {
@@ -371,7 +454,7 @@
                                         const a = document.createElement('a');
                                         a.style.display = 'none';
                                         a.href = url;
-                                        a.download = '測試.mp4';
+                                        a.download = $('#filename').val() + '.mp4';
                                         document.body.appendChild(a);
                                         a.click();
                                         setTimeout(() => {
@@ -441,8 +524,8 @@
                                                 echoCancellation: { exact: hasEchoCancellation }
                                             },
                                             video: {
-                                                width: 1280,
-                                                height: 720
+                                                width: $('#resolution').val() / 9 * 16,
+                                                height: $('#resolution').val()
                                             }
                                         };
                                         console.log('Using media constraints:', constraints);
@@ -453,208 +536,39 @@
                         </div>
                     </div>
                 </div>
-                <!-- CSS原始碼 -->
-                <div class="col-md-6">
+                <!-- main.css原始碼 -->
+                <div class="col-md-4">
                     <div class="card">
                         <div class="card-body">
                             <h3>CSS原始碼</h3>
-                            <pre data-src="./css/prism.css" data-download-link data-download-link-label="歡迎下載" style="height: 300px;">
+                            <p>此區負責主網頁BootStrap以外的排版</p>
+                            <pre data-src="./css/main.css" data-download-link data-download-link-label="歡迎下載" style="height: 300px;">
                                 <code lang="zh-TW" data-prismjs-copy="歡迎複製" data-prismjs-copy-error="錯誤已發生，請改按Ctrl+C複製" data-prismjs-copy-success="程式碼已複製！" class="lang-css">
-                                    /* PrismJS 1.23.0
-                                    https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript&plugins=show-language+normalize-whitespace+toolbar+copy-to-clipboard+download-button */
-                                    
-                                    
-                                    /**
-                                     * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
-                                     * Based on https://github.com/chriskempson/tomorrow-theme
-                                     * @author Rose Pritchard
-                                     */
-                                    
-                                    code[class*="language-"],
-                                    pre[class*="language-"] {
-                                        color: #ccc;
-                                        background: none;
-                                        font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-                                        font-size: 1em;
-                                        text-align: left;
-                                        white-space: pre;
-                                        word-spacing: normal;
-                                        word-break: normal;
-                                        word-wrap: normal;
-                                        line-height: 1.5;
-                                        -moz-tab-size: 4;
-                                        -o-tab-size: 4;
-                                        tab-size: 4;
-                                        -webkit-hyphens: none;
-                                        -moz-hyphens: none;
-                                        -ms-hyphens: none;
-                                        hyphens: none;
+                                    /* 設定整體網頁中BootStrap以外的排版 */
+
+                                    body::before {
+                                        display: block;
+                                        content: '';
+                                        height: 60px;
                                     }
-                                    
-                                    
-                                    /* Code blocks */
-                                    
-                                    pre[class*="language-"] {
-                                        padding: 1em;
-                                        margin: .5em 0;
-                                        overflow: auto;
+
+                                    #map {
+                                        border-radius: 10px;
                                     }
-                                    
-                                    :not(pre)>code[class*="language-"],
-                                    pre[class*="language-"] {
-                                        background: #2d2d2d;
+
+                                    @media(min-width: 768px) {
+                                        .news-input {
+                                            width: 50%;
+                                        }
                                     }
-                                    
-                                    
-                                    /* Inline code */
-                                    
-                                    :not(pre)>code[class*="language-"] {
-                                        padding: .1em;
-                                        border-radius: .3em;
-                                        white-space: normal;
-                                    }
-                                    
-                                    .token.comment,
-                                    .token.block-comment,
-                                    .token.prolog,
-                                    .token.doctype,
-                                    .token.cdata {
-                                        color: #999;
-                                    }
-                                    
-                                    .token.punctuation {
-                                        color: #ccc;
-                                    }
-                                    
-                                    .token.tag,
-                                    .token.attr-name,
-                                    .token.namespace,
-                                    .token.deleted {
-                                        color: #e2777a;
-                                    }
-                                    
-                                    .token.function-name {
-                                        color: #6196cc;
-                                    }
-                                    
-                                    .token.boolean,
-                                    .token.number,
-                                    .token.function {
-                                        color: #f08d49;
-                                    }
-                                    
-                                    .token.property,
-                                    .token.class-name,
-                                    .token.constant,
-                                    .token.symbol {
-                                        color: #f8c555;
-                                    }
-                                    
-                                    .token.selector,
-                                    .token.important,
-                                    .token.atrule,
-                                    .token.keyword,
-                                    .token.builtin {
-                                        color: #cc99cd;
-                                    }
-                                    
-                                    .token.string,
-                                    .token.char,
-                                    .token.attr-value,
-                                    .token.regex,
-                                    .token.variable {
-                                        color: #7ec699;
-                                    }
-                                    
-                                    .token.operator,
-                                    .token.entity,
-                                    .token.url {
-                                        color: #67cdcc;
-                                    }
-                                    
-                                    .token.important,
-                                    .token.bold {
-                                        font-weight: bold;
-                                    }
-                                    
-                                    .token.italic {
-                                        font-style: italic;
-                                    }
-                                    
-                                    .token.entity {
-                                        cursor: help;
-                                    }
-                                    
-                                    .token.inserted {
-                                        color: green;
-                                    }
-                                    
-                                    div.code-toolbar {
-                                        position: relative;
-                                    }
-                                    
-                                    div.code-toolbar>.toolbar {
-                                        position: absolute;
-                                        top: .3em;
-                                        right: .2em;
-                                        transition: opacity 0.3s ease-in-out;
-                                        opacity: 0;
-                                    }
-                                    
-                                    div.code-toolbar:hover>.toolbar {
-                                        opacity: 1;
-                                    }
-                                    
-                                    
-                                    /* Separate line b/c rules are thrown out if selector is invalid.
-                                       IE11 and old Edge versions don't support :focus-within. */
-                                    
-                                    div.code-toolbar:focus-within>.toolbar {
-                                        opacity: 1;
-                                    }
-                                    
-                                    div.code-toolbar>.toolbar .toolbar-item {
-                                        display: inline-block;
-                                    }
-                                    
-                                    div.code-toolbar>.toolbar a {
-                                        cursor: pointer;
-                                    }
-                                    
-                                    div.code-toolbar>.toolbar button {
-                                        background: none;
-                                        border: 0;
-                                        color: inherit;
-                                        font: inherit;
-                                        line-height: normal;
-                                        overflow: visible;
-                                        padding: 0;
-                                        -webkit-user-select: none;
-                                        /* for button */
-                                        -moz-user-select: none;
-                                        -ms-user-select: none;
-                                    }
-                                    
-                                    div.code-toolbar>.toolbar a,
-                                    div.code-toolbar>.toolbar button,
-                                    div.code-toolbar>.toolbar span {
-                                        color: #bbb;
-                                        font-size: .8em;
-                                        padding: 0 .5em;
-                                        background: #f5f2f0;
-                                        background: rgba(224, 224, 224, 0.2);
-                                        box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2);
-                                        border-radius: .5em;
-                                    }
-                                    
-                                    div.code-toolbar>.toolbar a:hover,
-                                    div.code-toolbar>.toolbar a:focus,
-                                    div.code-toolbar>.toolbar button:hover,
-                                    div.code-toolbar>.toolbar button:focus,
-                                    div.code-toolbar>.toolbar span:hover,
-                                    div.code-toolbar>.toolbar span:focus {
-                                        color: inherit;
-                                        text-decoration: none;
+
+
+                                    /* 設定"主要展示區"欄位中"錄影裝置"區的排版 */
+
+                                    video {
+                                        vertical-align: top;
+                                        --width: 42vw;
+                                        width: var(--width);
                                     }
                                 </code>
                             </pre>
