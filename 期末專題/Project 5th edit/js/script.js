@@ -15,7 +15,7 @@ $('#send-the-info').on('click', () => {
         count++;
         if (count > 1) {
             $("button#start").text('啟用新設定');
-            $("p#new-setting-reminder").text('若要套用新的影片設定，記得點選"起用新設定"喔!');
+            $("p#new-setting-reminder").text('若要套用新的影片設定，記得點選"啟用新設定"喔!');
             $("button#start").on("click", () => {
                 $("p#new-setting-reminder").remove();
             });
