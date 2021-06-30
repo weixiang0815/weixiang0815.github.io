@@ -21,6 +21,7 @@ body::before {
 
 video {
     vertical-align: top;
-    --width: 42vw;
-    width: var(--width);
+    width: 100%;
+    /* --width: 42vw;
+    width: var(--width); */
 }
