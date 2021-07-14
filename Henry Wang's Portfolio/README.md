@@ -20,5 +20,5 @@ ___
 ### 5. 所有寫著類拉丁文亂碼的地方
 ___
 ## 連結
-### 1. [網站成果](https://weixiang0815.github.io/Henry%20Wang's%20Portfolio/index.html)
+### 1. [網站成品](https://weixiang0815.github.io/Henry%20Wang's%20Portfolio/index.html)
 ### 2. [模板網址](https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/)
