@@ -1,7 +1,7 @@
 ## 期末專題主題介紹
-* ### 本專案為**政治國關三王威翔**的**109-2前端程式設計期末專題**
-* ### 本專案使用**Bootstrap 5**、**MediaRecorder API**、**jQuery**及**Prism**
-* ### 本專案主要功能有:
+* 本專案為**政治國關三王威翔**的**109-2前端程式設計期末專題**
+* 本專案使用**Bootstrap 5**、**MediaRecorder API**、**jQuery**及**Prism**
+* 本專案主要功能有:
     * 連線攝影機並線上錄製影片
     * 線上播放與下載錄影檔
     * 提供原始碼複製與下載
@@ -41,5 +41,5 @@ ___
 1. 第一次進入錄影裝置後，原歡迎畫面的內容與按鈕皆會改變，且"**繼續錄影**"與錄影裝置裡的"**返回**"可讓此區域在兩畫面來回切換
 ___
 ## 各種連結:
-* ### [專題成品](https://weixiang0815.github.io/final/index.html "將開啟本專題的網頁")
-* ### [專題介紹影片](https://drive.google.com/file/d/1urPRo93PXw1QYn2uBPelvK1bLxZpTF6W/view?usp=sharing "將從Google雲端開啟專題介紹影片")
+* [專題成品](https://weixiang0815.github.io/final/index.html "將開啟本專題的網頁")
+* [專題介紹影片](https://drive.google.com/file/d/1urPRo93PXw1QYn2uBPelvK1bLxZpTF6W/view?usp=sharing "將從Google雲端開啟專題介紹影片")
